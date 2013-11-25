@@ -1,3 +1,29 @@
+
 colorscheme molokai
 
-" vim: set ft=vimperator:
+" Vimperator preferences. {{{
+
+" Stay in normal mode after loading a page.
+set focuscontent
+
+" Completion.
+set wildmode=list:longest
+set noautocomplete
+
+" }}}
+
+" Firefox preferences. {{{
+
+" Disable smooth scrolling.
+set! general.smoothScroll=false
+
+" No close button on tabs.
+set! browser.tabs.closeButtons=3
+" And no animations...
+set! browser.tabs.animate=false
+" Keep window open when closing last tab.
+set! browser.tabs.closeWindowWithLastTab=true
+
+" }}}
+
+" vim: ft=vim sw=2 foldmethod=marker foldlevel=0
