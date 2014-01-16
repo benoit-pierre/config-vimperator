@@ -10,6 +10,9 @@ set focuscontent
 set wildmode=list:longest
 set noautocomplete
 
+" Default search engine.
+set defsearch=ixquick
+
 " }}}
 
 " Firefox preferences. {{{
