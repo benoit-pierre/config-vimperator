@@ -13,6 +13,9 @@ set noautocomplete
 " Default search engine.
 set defsearch=ixquick
 
+" Open a new tab for some commands.
+set newtab+=addons,downloads,help
+
 " }}}
 
 " Firefox preferences. {{{
