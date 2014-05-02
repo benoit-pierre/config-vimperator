@@ -39,6 +39,11 @@ set! browser.fullscreen.animateUp=0
 " Disable tab-groups animations...
 set! browser.panorama.animate_zoom=false
 
+" Set startup page to blank tab.
+set! browser.startup.homepage="about:blank"
+" And restore last session on startup.
+set! browser.startup.page=2
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
