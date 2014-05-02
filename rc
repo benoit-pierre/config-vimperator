@@ -44,6 +44,9 @@ set! browser.startup.homepage="about:blank"
 " And restore last session on startup.
 set! browser.startup.page=2
 
+" Enable DoNotTrack.
+set! privacy.donottrackheader.enabled=true
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
