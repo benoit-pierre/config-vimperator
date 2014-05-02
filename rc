@@ -3,9 +3,6 @@ colorscheme molokai
 
 " Vimperator preferences. {{{
 
-" Stay in normal mode after loading a page.
-set focuscontent
-
 " Completion.
 set wildmode=list:longest
 set noautocomplete
