@@ -50,6 +50,9 @@ set! privacy.donottrackheader.enabled=true
 " Disable password manager.
 set! signon.rememberSignons=false
 
+" Use dark theme for developer tools.
+set! devtools.theme="dark"
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
