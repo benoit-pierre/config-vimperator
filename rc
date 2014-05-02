@@ -47,6 +47,9 @@ set! browser.startup.page=2
 " Enable DoNotTrack.
 set! privacy.donottrackheader.enabled=true
 
+" Disable password manager.
+set! signon.rememberSignons=false
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
