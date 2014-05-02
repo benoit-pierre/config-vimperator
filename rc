@@ -30,6 +30,15 @@ set! browser.tabs.animate=false
 " Keep window open when closing last tab.
 set! browser.tabs.closeWindowWithLastTab=true
 
+" Disable download animations...
+set! browser.download.animateNotifications=false
+
+" Disable fullscreen animations...
+set! browser.fullscreen.animateUp=0
+
+" Disable tab-groups animations...
+set! browser.panorama.animate_zoom=false
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
