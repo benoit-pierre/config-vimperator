@@ -61,6 +61,13 @@ set! signon.rememberSignons=false
 " Use dark theme for developer tools.
 set! devtools.theme="dark"
 
+" Do not report to Mozilla...
+set! datareporting.healthreport.uploadEnabled=false
+
+" Do not report to Google...
+set! browser.safebrowsing.enabled=false
+set! browser.safebrowsing.malware.enableds=false
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
