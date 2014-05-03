@@ -44,6 +44,9 @@ set! browser.startup.homepage="about:blank"
 " And restore last session on startup.
 set! browser.startup.page=2
 
+" Save session every minute.
+set! browser.sessionstore.interval=60000
+
 " Enable DoNotTrack.
 set! privacy.donottrackheader.enabled=true
 
