@@ -22,6 +22,8 @@ set gui=addons,tabs
 
 " Disable smooth scrolling.
 set! general.smoothScroll=false
+" On tab bar too.
+set! toolkit.scrollbox.smoothScroll=false
 
 " No close button on tabs.
 set! browser.tabs.closeButtons=3
