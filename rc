@@ -25,6 +25,9 @@ set! general.smoothScroll=false
 " On tab bar too.
 set! toolkit.scrollbox.smoothScroll=false
 
+" Disable image on drag and drop.
+set! nglayout.enable_drag_images=false
+
 " No close button on tabs.
 set! browser.tabs.closeButtons=3
 " And no animations...
