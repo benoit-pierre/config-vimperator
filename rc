@@ -16,6 +16,12 @@ set newtab+=addons,downloads,help
 " Only display addons and tabs bars.
 set gui=addons,tabs
 
+" Configure the status bar.
+set status=input,ssl,location,bookmark,history,tabcount,position
+
+" Show the destination of the link under the cursor in the command line.
+set showstatuslinks=2
+
 " }}}
 
 " Firefox preferences. {{{
