@@ -71,6 +71,10 @@ set! browser.safebrowsing.malware.enableds=false
 " Disable clipboard events.
 set! dom.event.clipboardevents.enabled=false
 
+" Don't use internal editor for viewing sources.
+set! view_source.editor.external=true
+set! view_source.editor.path="/usr/bin/gvim"
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
