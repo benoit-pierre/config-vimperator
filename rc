@@ -77,4 +77,11 @@ set! view_source.editor.path="/usr/bin/gvim"
 
 " }}}
 
+" User styles. {{{
+
+" Fix input fields: white on black.
+style -name=inputs * input:not([type=image]):not([type=submit]) { -moz-appearance: none !important; background-color: black !important; background-image: none !important; color: white !important; } textarea { -moz-appearance: none !important; background-color: black !important; background-image: none !important; color: white !important; } select { -moz-appearance: none !important; background-color: black !important; color: white !important; }
+
+" }}}
+
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
