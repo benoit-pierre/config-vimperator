@@ -263,6 +263,14 @@ commands.addUserCommand(
       // }}}
 
       // }}}
+
+      // Dictionaries. {{{
+
+      installAddonIfNotAlready('spell-en', 'en-US@dictionaries.addons.mozilla.org');
+      installAddonIfNotAlready('spell-fr', 'fr-dicollecte@dictionaries.addons.mozilla.org');
+
+      // }}}
+
     }
     catch (e) {
       liberator.echoerr(e);
