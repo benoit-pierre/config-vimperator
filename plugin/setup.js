@@ -70,6 +70,25 @@ commands.addUserCommand(
 
       // }}}
 
+      // Classic Theme Restorer. {{{
+
+      installAddonIfNotAlready('Classic Theme Restorer', 'ClassicThemeRestorer@ArisT2Noia4dev', function() {
+
+	setPrefs({
+	  // Disable bookmark animation.
+	  'extensions.classicthemerestorer.bmanimation': false,
+	  // Hide addon bar close button.
+	  'extensions.classicthemerestorer.closeabarbut': true,
+	  // Hide navigation bar.
+	  'extensions.classicthemerestorer.hidenavbar': true,
+	  // Use tabs defaul look (for compatibility with some styles).
+	  'extensions.classicthemerestorer.tabs': 'tabs_default',
+	});
+
+      });
+
+      // }}}
+
       // Disconnect. {{{
 
       installAddonIfNotAlready('Disconnect', '2.0@disconnect.me');
