@@ -151,6 +151,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // Privacy Badger. {{{
+
+      installAddonIfNotAlready('Privacy Badger', 'jid1-MnnxcxisBPnSXQ@jetpack');
+
+      // }}}
+
       // NoScript. {{{
 
       installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}', function() {
