@@ -53,7 +53,7 @@ set! browser.panorama.animate_zoom=false
 " Set startup page to blank tab.
 set! browser.startup.homepage="about:blank"
 " And restore last session on startup.
-set! browser.startup.page=2
+set! browser.startup.page=3
 
 " Save session every minute.
 set! browser.sessionstore.interval=60000
