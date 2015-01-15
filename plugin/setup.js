@@ -260,6 +260,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // RequestPolicy. {{{
+
+      installAddonIfNotAlready('RequestPolicy', 'requestpolicy@requestpolicy.com');
+
+      // }}}
+
       // Self-Destructing Cookies. {{{
 
       installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
