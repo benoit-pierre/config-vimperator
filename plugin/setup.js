@@ -309,15 +309,17 @@ commands.addUserCommand(
       setPrefs({
 	'browser.download.animateNotifications'   : false          , // Disable download animations...
 	'browser.fullscreen.animateUp'            : 0              , // Disable fullscreen animations...
+	'browser.newtab.url'                      : 'about:blank'  , // Set new tab page to blank.
 	'browser.panorama.animate_zoom'           : false          , // Disable tab-groups animations...
 	'browser.safebrowsing.enabled'            : false          , // Do not report to Google...
 	'browser.safebrowsing.malware.enableds'   : false          ,
 	'browser.sessionstore.interval'           : 60000          , // Save session every minute.
-	'browser.startup.homepage'                : "about:blank"  , // Set startup page to blank tab.
+	'browser.startup.homepage'                : 'about:blank'  , // Set startup page to blank.
 	'browser.startup.page'                    : 3              , // And restore last session on startup.
 	'browser.tabs.animate'                    : false          , // And no animations...
 	'browser.tabs.closeButtons'               : 3              , // No close button on tabs.
-	'browser.tabs.closeWindowWithLastTab'     : true           , // Keep window open when closing last tab.
+	'browser.tabs.closeWindowWithLastTab'     : false          , // Keep window open when closing last tab.
+	'browser.tabs.selectOwnerOnClose'         : true           , // Focus owner on tab close.
 	'datareporting.healthreport.uploadEnabled': false          , // Do not report to Mozilla...
 	'devtools.theme'                          : "dark"         , // Use dark theme for developer tools.
 	'dom.event.clipboardevents.enabled'       : false          , // Disable clipboard events.
