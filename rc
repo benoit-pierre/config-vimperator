@@ -24,65 +24,6 @@ set showstatuslinks=2
 
 " }}}
 
-" Firefox preferences. {{{
-
-" Disable smooth scrolling.
-set! general.smoothScroll=false
-" On tab bar too.
-set! toolkit.scrollbox.smoothScroll=false
-
-" Disable image on drag and drop.
-set! nglayout.enable_drag_images=false
-
-" No close button on tabs.
-set! browser.tabs.closeButtons=3
-" And no animations...
-set! browser.tabs.animate=false
-" Keep window open when closing last tab.
-set! browser.tabs.closeWindowWithLastTab=true
-
-" Disable download animations...
-set! browser.download.animateNotifications=false
-
-" Disable fullscreen animations...
-set! browser.fullscreen.animateUp=0
-
-" Disable tab-groups animations...
-set! browser.panorama.animate_zoom=false
-
-" Set startup page to blank tab.
-set! browser.startup.homepage="about:blank"
-" And restore last session on startup.
-set! browser.startup.page=3
-
-" Save session every minute.
-set! browser.sessionstore.interval=60000
-
-" Enable DoNotTrack.
-set! privacy.donottrackheader.enabled=true
-
-" Disable password manager.
-set! signon.rememberSignons=false
-
-" Use dark theme for developer tools.
-set! devtools.theme="dark"
-
-" Do not report to Mozilla...
-set! datareporting.healthreport.uploadEnabled=false
-
-" Do not report to Google...
-set! browser.safebrowsing.enabled=false
-set! browser.safebrowsing.malware.enableds=false
-
-" Disable clipboard events.
-set! dom.event.clipboardevents.enabled=false
-
-" Don't use internal editor for viewing sources.
-set! view_source.editor.external=true
-set! view_source.editor.path="/usr/bin/gvim"
-
-" }}}
-
 " User styles. {{{
 
 " Fix input fields: white on black.

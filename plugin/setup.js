@@ -321,6 +321,69 @@ commands.addUserCommand(
 
       // }}}
 
+      // Firefox preferences. {{{
+
+      setPrefs({
+
+	// Disable smooth scrolling.
+	'general.smoothScroll': false,
+	// On tab bar too.
+	'toolkit.scrollbox.smoothScroll': false,
+
+	// Disable image on drag and drop.
+	'nglayout.enable_drag_images': false,
+
+	// No close button on tabs.
+	'browser.tabs.closeButtons': 3,
+	// And no animations...
+	'browser.tabs.animate': false,
+	// Keep window open when closing last tab.
+	'browser.tabs.closeWindowWithLastTab': true,
+
+	// Disable download animations...
+	'browser.download.animateNotifications': false,
+
+	// Disable fullscreen animations...
+	'browser.fullscreen.animateUp': 0,
+
+	// Disable tab-groups animations...
+	'browser.panorama.animate_zoom': false,
+
+	// Set startup page to blank tab.
+	'browser.startup.homepage': "about:blank",
+	// And restore last session on startup.
+	'browser.startup.page': 3,
+
+	// Save session every minute.
+	'browser.sessionstore.interval': 60000,
+
+	// Enable DoNotTrack.
+	'privacy.donottrackheader.enabled': true,
+
+	// Disable password manager.
+	'signon.rememberSignons': false,
+
+	// Use dark theme for developer tools.
+	'devtools.theme': "dark",
+
+	// Do not report to Mozilla...
+	'datareporting.healthreport.uploadEnabled': false,
+
+	// Do not report to Google...
+	'browser.safebrowsing.enabled': false,
+	'browser.safebrowsing.malware.enableds': false,
+
+	// Disable clipboard events.
+	'dom.event.clipboardevents.enabled': false,
+
+	// Don't use internal editor for viewing sources.
+	'view_source.editor.external': true,
+	'view_source.editor.path': "/usr/bin/gvim",
+
+	});
+
+      // }}}
+
     }
     catch (e) {
       liberator.echoerr(e);
