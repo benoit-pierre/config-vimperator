@@ -14,7 +14,7 @@ set defsearch=ixquick
 set newtab+=addons,downloads,help
 
 " Only display addons and tabs bars.
-set gui=addons,tabs
+set toolbars=none,addons,tabs
 
 " Configure the status bar.
 set status=input,ssl,location,bookmark,history,tabcount,position
