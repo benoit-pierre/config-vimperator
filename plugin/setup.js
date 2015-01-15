@@ -254,6 +254,19 @@ commands.addUserCommand(
 
       // }}}
 
+      // Self-Destructing Cookies. {{{
+
+      installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
+
+	setPrefs({
+	  'extensions.jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.displayNotification': false, // Disable notifications.
+	  'extensions.jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.strictAccess'       : true , // Use strick access policy.
+	});
+
+      });
+
+      // }}}
+
       // Stylish. {{{
 
       installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}');
