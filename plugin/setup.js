@@ -312,7 +312,7 @@ commands.addUserCommand(
 	'browser.newtab.url'                      : 'about:blank'  , // Set new tab page to blank.
 	'browser.panorama.animate_zoom'           : false          , // Disable tab-groups animations...
 	'browser.safebrowsing.enabled'            : false          , // Do not report to Google...
-	'browser.safebrowsing.malware.enableds'   : false          ,
+	'browser.safebrowsing.malware.enabled'    : false          ,
 	'browser.sessionstore.interval'           : 60000          , // Save session every minute.
 	'browser.startup.homepage'                : 'about:blank'  , // Set startup page to blank.
 	'browser.startup.page'                    : 3              , // And restore last session on startup.
