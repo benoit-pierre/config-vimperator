@@ -75,14 +75,10 @@ commands.addUserCommand(
       installAddonIfNotAlready('Classic Theme Restorer', 'ClassicThemeRestorer@ArisT2Noia4dev', function() {
 
 	setPrefs({
-	  // Disable bookmark animation.
-	  'extensions.classicthemerestorer.bmanimation': false,
-	  // Hide addon bar close button.
-	  'extensions.classicthemerestorer.closeabarbut': true,
-	  // Hide navigation bar.
-	  'extensions.classicthemerestorer.hidenavbar': true,
-	  // Use tabs defaul look (for compatibility with some styles).
-	  'extensions.classicthemerestorer.tabs': 'tabs_default',
+	  'extensions.classicthemerestorer.bmanimation' : false         , // Disable bookmark animation.
+	  'extensions.classicthemerestorer.closeabarbut': true          , // Hide addon bar close button.
+	  'extensions.classicthemerestorer.hidenavbar'  : true          , // Hide navigation bar.
+	  'extensions.classicthemerestorer.tabs'        : 'tabs_default', // Use tabs default look (for compatibility with some styles).
 	});
 
       });
@@ -100,8 +96,7 @@ commands.addUserCommand(
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
 
 	setPrefs({
-	  // Use embedded panel rather than download bar.
-	  'extensions.downloadbar.userinterface': "panel",
+	  'extensions.downloadbar.userinterface': "panel", // Use embedded panel rather than download bar.
 	});
 
       });
@@ -112,13 +107,12 @@ commands.addUserCommand(
 
       installAddonIfNotAlready('FlashGot', '{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}', function() {
 
+	// Setup and use custom downloader.
 	setPrefs({
-	  // Setup custom downloader.
-	  'flashgot.custom': "Downloader",
+	  'flashgot.custom'                : "Downloader",
 	  'flashgot.custom.Downloader.args': "--referer [REFERER] --dir [FOLDER] --out [FNAME] --load-cookies [CFILE] --uris [ULIST]",
-	  'flashgot.custom.Downloader.exe': "~/progs/bin/downloader",
-	  // And use it.
-	  'flashgot.defaultDM': "Downloader",
+	  'flashgot.custom.Downloader.exe' : "~/progs/bin/downloader",
+	  'flashgot.defaultDM'             : "Downloader",
 	});
 
       });
@@ -143,8 +137,7 @@ commands.addUserCommand(
       installAddonIfNotAlready('HTTPS Everywhere', 'https-everywhere@eff.org', function() {
 
 	setPrefs({
-	  // Disable observatory.
-	  'extensions.https_everywhere._observatory.enabled': false,
+	  'extensions.https_everywhere._observatory.enabled': false, // Disable observatory.
 	});
 
       });
@@ -168,12 +161,9 @@ commands.addUserCommand(
       installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}', function() {
 
 	setPrefs({
-	  // Disable notifications.
-	  'noscript.notify': false,
-	  // Enable content blocking even for white-listed sites.
-	  'noscript.contentBlocker': true,
-	  // But do not ask for confirmation every time...
-	  'noscript.confirmUnblock': false,
+	  'noscript.notify'        : false, // Disable notifications.
+	  'noscript.contentBlocker': true , // Enable content blocking for white-listed sites too.
+	  'noscript.confirmUnblock': false, // Do not ask for confirmation when unblocking.
 	});
 
 	// Set a few untrusted.
@@ -290,22 +280,15 @@ commands.addUserCommand(
       installAddonIfNotAlready('Tab Mix Plus', '{dc572301-7619-498c-a57d-39143191b318}', function() {
 
 	setPrefs({
-	  // Open new tabs starting on the right of current tab.
-	  'extensions.tabmix.openNewTabNext': true,
-	  'extensions.tabmix.openTabNext': true,
-	  // Hide tab bar "close tab" and "new tab" buttons.
-	  'extensions.tabmix.hideTabBarButton': true,
-	  'extensions.tabmix.newTabButton': false,
-	  // But show "all tabs" button.
-	  'extensions.tabmix.hideAllTabsButton': false,
-	  // Hide tabs close button.
-	  'extensions.tabmix.tabs.closeButtons.enable': false,
-	  // Never hide tab bar.
-	  'extensions.tabmix.hideTabbar': 0,
-	  // Focus last selected tab on close.
-	  'extensions.tabmix.focusTab': 4,
-	  // Directly move tab on dragging.
-	  'extensions.tabmix.moveTabOnDragging': true,
+	  'extensions.tabmix.focusTab'                : 4    , // Focus last selected tab on close.
+	  'extensions.tabmix.hideAllTabsButton'       : false, // Show tab bar "all tabs" button.
+	  'extensions.tabmix.hideTabBarButton'        : true , // Hide tab bar "close tab" button.
+	  'extensions.tabmix.hideTabbar'              : 0    , // Never hide tab bar.
+	  'extensions.tabmix.moveTabOnDragging'       : true , // Directly move tab on dragging.
+	  'extensions.tabmix.newTabButton'            : false, // Hide tab bar "new tab" button.
+	  'extensions.tabmix.openNewTabNext'          : true , // Open new tabs on the right of current tab.
+	  'extensions.tabmix.openTabNext'             : true , // Open tabs on the right of current tab.
+	  'extensions.tabmix.tabs.closeButtons.enable': false, // Hide tabs close button.
 	});
 
       });
@@ -324,62 +307,27 @@ commands.addUserCommand(
       // Firefox preferences. {{{
 
       setPrefs({
-
-	// Disable smooth scrolling.
-	'general.smoothScroll': false,
-	// On tab bar too.
-	'toolkit.scrollbox.smoothScroll': false,
-
-	// Disable image on drag and drop.
-	'nglayout.enable_drag_images': false,
-
-	// No close button on tabs.
-	'browser.tabs.closeButtons': 3,
-	// And no animations...
-	'browser.tabs.animate': false,
-	// Keep window open when closing last tab.
-	'browser.tabs.closeWindowWithLastTab': true,
-
-	// Disable download animations...
-	'browser.download.animateNotifications': false,
-
-	// Disable fullscreen animations...
-	'browser.fullscreen.animateUp': 0,
-
-	// Disable tab-groups animations...
-	'browser.panorama.animate_zoom': false,
-
-	// Set startup page to blank tab.
-	'browser.startup.homepage': "about:blank",
-	// And restore last session on startup.
-	'browser.startup.page': 3,
-
-	// Save session every minute.
-	'browser.sessionstore.interval': 60000,
-
-	// Enable DoNotTrack.
-	'privacy.donottrackheader.enabled': true,
-
-	// Disable password manager.
-	'signon.rememberSignons': false,
-
-	// Use dark theme for developer tools.
-	'devtools.theme': "dark",
-
-	// Do not report to Mozilla...
-	'datareporting.healthreport.uploadEnabled': false,
-
-	// Do not report to Google...
-	'browser.safebrowsing.enabled': false,
-	'browser.safebrowsing.malware.enableds': false,
-
-	// Disable clipboard events.
-	'dom.event.clipboardevents.enabled': false,
-
-	// Don't use internal editor for viewing sources.
-	'view_source.editor.external': true,
-	'view_source.editor.path': "/usr/bin/gvim",
-
+	'browser.download.animateNotifications'   : false          , // Disable download animations...
+	'browser.fullscreen.animateUp'            : 0              , // Disable fullscreen animations...
+	'browser.panorama.animate_zoom'           : false          , // Disable tab-groups animations...
+	'browser.safebrowsing.enabled'            : false          , // Do not report to Google...
+	'browser.safebrowsing.malware.enableds'   : false          ,
+	'browser.sessionstore.interval'           : 60000          , // Save session every minute.
+	'browser.startup.homepage'                : "about:blank"  , // Set startup page to blank tab.
+	'browser.startup.page'                    : 3              , // And restore last session on startup.
+	'browser.tabs.animate'                    : false          , // And no animations...
+	'browser.tabs.closeButtons'               : 3              , // No close button on tabs.
+	'browser.tabs.closeWindowWithLastTab'     : true           , // Keep window open when closing last tab.
+	'datareporting.healthreport.uploadEnabled': false          , // Do not report to Mozilla...
+	'devtools.theme'                          : "dark"         , // Use dark theme for developer tools.
+	'dom.event.clipboardevents.enabled'       : false          , // Disable clipboard events.
+	'general.smoothScroll'                    : false          , // Disable smooth scrolling.
+	'nglayout.enable_drag_images'             : false          , // Disable image on drag and drop.
+	'privacy.donottrackheader.enabled'        : true           , // Enable DoNotTrack.
+	'signon.rememberSignons'                  : false          , // Disable password manager.
+	'toolkit.scrollbox.smoothScroll'          : false          , // Disable tab bar smooth scrolling.
+	'view_source.editor.external'             : true           , // Don't use internal editor for viewing sources.
+	'view_source.editor.path'                 : "/usr/bin/gvim",
 	});
 
       // }}}
