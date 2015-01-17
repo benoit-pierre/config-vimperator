@@ -55,6 +55,13 @@ commands.addUserCommand(
 	}
       }
 
+      function installGreasemonkeyScript(name) {
+	var script_file = File('~/.vimperator/greasemonkey-scripts/' + sanitizeName(name) + '.user.js');
+	var script_uri = Services.io.newFileURI(script_file).spec;
+	log('Installing "' + name + '" Greasemonkey script.');
+	GM_util.showInstallDialog(script_uri, browser, GM_util.getService());
+      }
+
       // Install IXQuick search engine.
       if (null == Services.search.getEngineByAlias('ixquick')) {
 	log('Installing IXQuick search engine.');
@@ -127,6 +134,9 @@ commands.addUserCommand(
 	  // Don't use internal editor.
 	  'extensions.greasemonkey.editor': "/usr/bin/gvim",
 	});
+
+	installGreasemonkeyScript('External play Youtube videos');
+	installGreasemonkeyScript('Input fields clear/paste buttons');
 
       });
 
