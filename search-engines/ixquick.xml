@@ -1,0 +1,14 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Ixquick</ShortName>
+  <Description>Ixquick Search Plugin</Description>
+  <OutputEncoding>utf-8</OutputEncoding>
+  <InputEncoding>utf-8</InputEncoding>
+  <Image width="16" height="16" type="image/icon">data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAELUExURf////Hz9/P1+ABuxwB82wBftfz9/gBDmnCr3OTs9eru8z2LzNHb5wA6jwB22HiawQBRpvb2+Sub60RzqCRcmwBarQVNmc3b6gBxzC52ud/u+dLk89/p8g9LkLXD2Im95l6v6dri7eHy/QB40/7+/5Kuzq+6za/V8kN6tABfut3m7wBzzjJXjwmM6ClnqeDs9gBBkiqS4avD3Cxgndnh61Sc2At60R+AzVqa0C1xssvc7QBmvABWqhF5z9vn8gIyevX4+vP5/eLs9SRqrQBTpwBx0vn7/QR50+vy+Y+mxBN1x5a21gBQnyOCzyKD0aDK6wBNosLZ7ODv+3qhyf7+/uDo8X6Ss0+UzwB42k6y2cYAAADDSURBVHjaYmBAAwABBEN2MAZAAMGQRSCUARBAUORozgFlAQQQFKm7+4ZAWAABxMDgIS0VpKTAZ+bPKaPFw8gAEEAMDE7hfoZCuizaXpJ6Ip6MDAABBFSkb+oawaLMzBogpsrEwAAQQGBd8rYSzNY2luIgNkAAgZEbtyarKLs3mA0QQGBk5SLg7GMgDNYAEEBgFMyrEWoka28CYgMEEAg5GPOzMTAo6oSpADkAAQRCXHJghqAaUJgBIIAwEEAAYSCAAAMARBsPYr2pVGQAAAAASUVORK5CYII=</Image>
+  <Url type="text/html" method="POST"  template="https://ixquick.com/do/search">
+   <Param name="query" value="{searchTerms}"/>
+   <Param name="cat" value="web"/>
+   <Param name="pl" value="ff"/>
+   <Param name="language" value="english"/>
+   <Param name="prfh" value="lang_homepageEEEs/black/eng/N1Nfont_sizeEEEmediumN1Nrecent_results_filterEEE1N1Nlanguage_uiEEEenglishN1Nsearch_engine_sourcesEEE1N1Ndisable_open_in_new_windowEEE0N1NsslEEE1N1Ndisable_family_filterEEE1N1Nnum_of_resultsEEE10N1Npicture_privacyEEEonN1Ndisable_video_family_filterEEE1N1NsuggestionsEEE0N1N"/>
+  </Url>
+</OpenSearchDescription>

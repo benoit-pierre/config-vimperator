@@ -65,6 +65,25 @@ commands.addUserCommand(
 	GM_util.showInstallDialog(script_uri, browser, GM_util.getService());
       }
 
+      function installSearchEngine(name, alias) {
+	var engine = Services.search.getEngineByName(name);
+	if (null != engine) {
+	  return;
+	}
+	log('Installing ' + name + ' search engine.');
+	var engine_file = File('~/.vimperator/search-engines/' + sanitizeName(name) + '.xml');
+	var engine_uri = Services.io.newFileURI(engine_file).spec;
+	var callback = {
+	  onSuccess: function (engine) {
+	    engine.alias = alias;
+	  },
+	  onError: function (errorCode) {
+	    liberator.echoerr(errorCode);
+	  }
+	};
+	Services.search.addEngine(engine_uri, 1, null, true, callback);
+      }
+
       function installStylishStyle(name, uri) {
 	var style_file = File('~/.vimperator/stylish-styles/' + sanitizeName(name) + '.css');
 	log('Installing "' + name + '" Stylish style.');
@@ -76,13 +95,6 @@ commands.addUserCommand(
 	style.mode = style.CALCULATE_META | style.REGISTER_STYLE_ON_CHANGE;
 	style.init(uri, uri, uri, null, name, css, false, css, null, null);
 	stylishCommon.openInstall({style: style, installCallback: null});
-      }
-
-      // Install IXQuick search engine.
-      if (null == Services.search.getEngineByAlias('ixquick')) {
-	log('Installing IXQuick search engine.');
-	// Services.search.addEngine(File('~/.vimperator/extensions/search-ixquick.xml').path, 'application/opensearchdescription+xml', 'https://ixquick.com/favicon.ico', false);
-	window.external.AddSearchProvider('https://addons.mozilla.org/firefox/downloads/latest/12781/addon-12781-latest.xml');
       }
 
       // Addons. {{{
@@ -373,7 +385,23 @@ commands.addUserCommand(
 
       // }}}
 
-    }
+      // Search engine. {{{
+
+      installSearchEngine('Amazon France'            , 'azf');
+      installSearchEngine('Arch Linux Bugs'          , 'archb');
+      installSearchEngine('Arch Linux Packages'      , 'arch');
+      installSearchEngine('Arch Linux Wiki'          , 'archw');
+      installSearchEngine('Github'                   , 'github');
+      installSearchEngine('Google Play'              , 'gplay');
+      installSearchEngine('Ixquick'                  , 'ixquick');
+      installSearchEngine('Mozilla Developer Network', 'mdn');
+      installSearchEngine('Steam'                    , 'steam');
+      installSearchEngine('YouTube'                  , 'youtube');
+      installSearchEngine('VIM'                      , 'vim');
+
+      // }}}
+
+  }
     catch (e) {
       liberator.echoerr(e);
     }
