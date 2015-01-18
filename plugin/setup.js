@@ -11,6 +11,10 @@ commands.addUserCommand(
 	console.log('Setup: ' + text);
       }
 
+      function sanitizeName(name) {
+	return name.toLowerCase().replace(/[^a-z0-9_-]/g, '_');
+      }
+
       function installAddonIfNotAlready(name, id, configure) {
 
 	AddonManager.getAddonByID(id, function (addon) {
@@ -26,8 +30,7 @@ commands.addUserCommand(
 
 	  log('Installing ' + name + ' addon.');
 
-	  var xpi_name = name.toLowerCase().replace(/[^a-z0-9_-]/g, '_');
-	  var xpi = File('~/.vimperator/extensions/' + xpi_name + '.xpi');
+	  var xpi = File('~/.vimperator/extensions/' + sanitizeName(name) + '.xpi');
 
 	  AddonManager.getInstallForFile(xpi, function (install) {
 	    install.install();
