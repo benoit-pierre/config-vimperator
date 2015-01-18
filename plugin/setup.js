@@ -65,6 +65,19 @@ commands.addUserCommand(
 	GM_util.showInstallDialog(script_uri, browser, GM_util.getService());
       }
 
+      function installStylishStyle(name, uri) {
+	var style_file = File('~/.vimperator/stylish-styles/' + sanitizeName(name) + '.css');
+	log('Installing "' + name + '" Stylish style.');
+	if (null == uri) {
+	  uri = Services.io.newFileURI(style_file).spec;
+	}
+	var css = style_file.read();
+	var style = Components.classes["@userstyles.org/style;1"].createInstance(Components.interfaces.stylishStyle);
+	style.mode = style.CALCULATE_META | style.REGISTER_STYLE_ON_CHANGE;
+	style.init(uri, uri, uri, null, name, css, false, css, null, null);
+	stylishCommon.openInstall({style: style, installCallback: null});
+      }
+
       // Install IXQuick search engine.
       if (null == Services.search.getEngineByAlias('ixquick')) {
 	log('Installing IXQuick search engine.');
@@ -284,7 +297,20 @@ commands.addUserCommand(
 
       // Stylish. {{{
 
-      installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}');
+      installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}', function() {
+
+	installStylishStyle('Andrews\'s Dark Userstyles.org'           , 'https://userstyles.org/styles/1779/andrews-s-dark-userstyles-org');
+	installStylishStyle('Another dark Arch Linux theme'            , 'https://userstyles.org/styles/89090/another-dark-arch-linux-theme');
+	installStylishStyle('Black Youtube by Panos'                   , 'https://userstyles.org/styles/62289/black-youtube-by-panos');
+	installStylishStyle('Firefox FlatStudio Tabs (like tabs-2.css)', 'https://userstyles.org/styles/86995/firefox-flatstudio-tabs-like-tabs-2-css');
+	installStylishStyle('Fixed font Gmail'                         , 'https://userstyles.org/styles/52863/fixed-font-gmail');
+	installStylishStyle('NewsBlur - Kemwer Black'                  , 'https://userstyles.org/styles/86275/newsblur-kemwer-black');
+	installStylishStyle('Rock Paper Centered'                      , 'https://userstyles.org/styles/93689/rock-paper-centered');
+	installStylishStyle('Youtube Improved Layout'                  , null);
+	installStylishStyle('about:black'                              , 'https://userstyles.org/styles/42706/about-black');
+
+      });
+
 
       // }}}
 

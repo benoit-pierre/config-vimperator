@@ -1,0 +1,271 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+/*
+
+ABOUT : BLANK
+
+*/
+
+@-moz-document url("about:") 
+{
+    /*
+    black logo version arranged from images on
+    https://wiki.mozilla.org/Firefox3.5/Logos
+    */
+    html , 
+    body 
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    a /* links */
+    {
+        color: gray !important;
+    }
+    /* 300 x 236 */
+    #vendorURL img[src="about:logo"]
+    {
+        display: none !important;
+    }
+    #vendorURL
+    {
+        height: 216px !important;
+        background: url( http://dl.dropbox.com/u/3550293/stylish/about.black/about-black-logo.png ) no-repeat center center !important;
+        display: block !important;
+        width: 300px !important;
+        padding-top: 20px !important;
+        margin-top: 0px !important;
+    }
+    #aboutLogoContainer
+    {
+        border: 1px solid gray !important;
+    }
+    #version
+    {
+        padding-top: 218px !important;
+    }
+}
+
+/*
+
+ABOUT : BLANK
+
+*/
+
+@-moz-document url("about:blank") 
+{
+    html , 
+    body 
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+/*
+
+CONFIG
+
+still not working
+god damn
+
+*/
+
+@-moz-document url-prefix("about:config")
+{
+    window , 
+    page , 
+    dialog , 
+    wizard , 
+    prefwindow , 
+    :root , 
+    #config  
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+/*
+
+CREDITS
+
+*/
+
+@-moz-document url-prefix("about:credits")
+{
+    html , 
+    body 
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    p a /* links in the footer area */
+    {
+        color: gray !important;
+    }
+}
+
+
+/*
+
+LICENCE
+
+*/
+
+@-moz-document url-prefix("about:license")
+{
+    html , 
+    body 
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    a
+    {
+        color: gray !important;
+    }
+}
+
+
+/*
+
+NET ERROR
+
+*/
+
+@-moz-document url-prefix("about:neterror")
+{
+    html , 
+    body , 
+    div  
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+/*
+
+PRIVATE BROWSING
+
+*/
+
+@-moz-document url("about:privatebrowsing") {
+    html , 
+    body ,
+    div
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    a
+    {
+       color: gray !important;
+    }
+}
+
+/*
+
+PLUG INS
+
+*/
+
+@-moz-document url-prefix("about:plugins")
+{
+    html , 
+    body 
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    a
+    {
+        color: gray !important;
+    }
+    th
+    {
+        background-color: silver !important;
+        color: #000000 !important;
+    }
+    td
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+/*
+
+SESSION RESTORE
+
+*/
+
+@-moz-document url-prefix("about:sessionrestore") 
+{
+    html , 
+    body , 
+    div  
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+/*
+
+NEW TAB
+
+*/
+
+@-moz-document url-prefix("about:newtab") 
+{
+    html , 
+    body , 
+    div  
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    .newtab-cell
+    {
+        border-color: #666666 !important;
+    }
+    .newtab-cell:hover
+    {
+        border-color: #FFFFFF !important;
+    }
+    .newtab-title {
+        background-color: #666666 !important;
+        color: #FFFFFF !important;
+    }
+    .newtab-cell:hover .newtab-title {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+    }
+}
+
+/*
+
+ABOUT
+
+*/
+
+@-moz-document url-prefix("about:about") 
+{
+    html , 
+    body , 
+    div  
+    {
+        background-color: #000000 !important;
+        color: #FFFFFF !important;
+    }
+    a /* links */
+    {
+        color: gray !important;
+    }
+}
