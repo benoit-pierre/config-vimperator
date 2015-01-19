@@ -105,6 +105,19 @@ commands.addUserCommand(
 
       // }}}
 
+      // BetterPrivacy. {{{
+
+      installAddonIfNotAlready('BetterPrivacy', '{d40f5e7b-d2cf-4856-b441-cc613eeffbe3}', function() {
+
+	setPrefs({
+	  'extensions.bprivacy.DefaultFlashCookieDeletion': true, // Delete default Flashplayer cookie too.
+	  'extensions.bprivacy.donotaskonexit'            : true, // Don't confirm deletion on exit.
+	});
+
+      });
+
+      // }}}
+
       // Classic Theme Restorer. {{{
 
       installAddonIfNotAlready('Classic Theme Restorer', 'ClassicThemeRestorer@ArisT2Noia4dev', function() {
