@@ -151,6 +151,21 @@ commands.addUserCommand(
 
       // }}}
 
+      // FlashBlock. {{{
+
+      installAddonIfNotAlready('Flashblock', '{3d7eb24f-2740-49df-8937-200b1cc08f8a}', function() {
+
+	setPrefs({
+	  'flashblock.enabled'            : true,
+	  'flashblock.html5video.blocked' : true,
+	  'flashblock.java.blocked'       : true,
+	  'flashblock.silverlight.blocked': true,
+	});
+
+      });
+
+      // }}}
+
       // FlashGot. {{{
 
       installAddonIfNotAlready('FlashGot', '{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}', function() {
@@ -329,6 +344,7 @@ commands.addUserCommand(
 	installStylishStyle('Black Youtube by Panos'                   , 'https://userstyles.org/styles/62289/black-youtube-by-panos');
 	installStylishStyle('Firefox FlatStudio Tabs (like tabs-2.css)', 'https://userstyles.org/styles/86995/firefox-flatstudio-tabs-like-tabs-2-css');
 	installStylishStyle('Fixed font Gmail'                         , 'https://userstyles.org/styles/52863/fixed-font-gmail');
+	installStylishStyle('Flashblock YouTube Fix'                   , null);
 	installStylishStyle('NewsBlur - Kemwer Black'                  , 'https://userstyles.org/styles/86275/newsblur-kemwer-black');
 	installStylishStyle('Rock Paper Centered'                      , 'https://userstyles.org/styles/93689/rock-paper-centered');
 	installStylishStyle('Youtube Improved Layout'                  , null);
