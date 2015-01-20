@@ -125,7 +125,8 @@ commands.addUserCommand(
 	setPrefs({
 	  'extensions.classicthemerestorer.bmanimation' : false         , // Disable bookmark animation.
 	  'extensions.classicthemerestorer.closeabarbut': true          , // Hide addon bar close button.
-	  'extensions.classicthemerestorer.hidenavbar'  : true          , // Hide navigation bar.
+	  'extensions.classicthemerestorer.hidenavbar'  : false         , // Don't hide navigation bar (let vimperator handle it).
+	  'extensions.classicthemerestorer.pananimation': false         , // Disable panel animation.
 	  'extensions.classicthemerestorer.tabs'        : 'tabs_default', // Use tabs default look (for compatibility with some styles).
 	});
 
