@@ -391,6 +391,7 @@ commands.addUserCommand(
 	  'extensions.tabmix.hideAllTabsButton'       : false, // Show tab bar "all tabs" button.
 	  'extensions.tabmix.hideTabBarButton'        : true , // Hide tab bar "close tab" button.
 	  'extensions.tabmix.hideTabbar'              : 0    , // Never hide tab bar.
+	  'extensions.tabmix.linkTarget'              : true , // Open links with a target attribute in current tab.
 	  'extensions.tabmix.moveTabOnDragging'       : true , // Directly move tab on dragging.
 	  'extensions.tabmix.newTabButton'            : false, // Hide tab bar "new tab" button.
 	  'extensions.tabmix.openNewTabNext'          : true , // Open new tabs on the right of current tab.
@@ -416,6 +417,8 @@ commands.addUserCommand(
       setPrefs({
 	'browser.download.animateNotifications'   : false          , // Disable download animations...
 	'browser.fullscreen.animateUp'            : 0              , // Disable fullscreen animations...
+	'browser.link.open_newwindow'             : 1              , // Open links, that would normally open in a new window, in the current tab/window.
+	'browser.link.open_newwindow.restriction' : 0              , // Divert all links according to browser.link.open_newwindow.
 	'browser.newtab.url'                      : 'about:blank'  , // Set new tab page to blank.
 	'browser.panorama.animate_zoom'           : false          , // Disable tab-groups animations...
 	'browser.safebrowsing.enabled'            : false          , // Do not report to Google...
@@ -437,7 +440,7 @@ commands.addUserCommand(
 	'toolkit.scrollbox.smoothScroll'          : false          , // Disable tab bar smooth scrolling.
 	'view_source.editor.external'             : true           , // Don't use internal editor for viewing sources.
 	'view_source.editor.path'                 : "/usr/bin/gvim",
-	});
+      });
 
       // }}}
 
