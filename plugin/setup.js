@@ -7,6 +7,8 @@ commands.addUserCommand(
   function() {
     try {
 
+      // Helpers. {{{
+
       function log(text) {
 	console.log('Setup: ' + text);
       }
@@ -112,6 +114,8 @@ commands.addUserCommand(
 	style.init(uri, uri, uri, null, name, css, false, css, null, null);
 	stylishCommon.openInstall({style: style, installCallback: null});
       }
+
+      // }}}
 
       // Addons. {{{
 
