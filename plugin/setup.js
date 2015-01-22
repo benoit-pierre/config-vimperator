@@ -347,6 +347,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // Referrer Control. {{{
+
+      installAddonIfNotAlready('Referrer Control', 'referrercontrol@qixinglu.com');
+
+      // }}}
+
       // RequestPolicy. {{{
 
       installAddonIfNotAlready('RequestPolicy', 'requestpolicy@requestpolicy.com');
