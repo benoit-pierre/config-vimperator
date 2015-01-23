@@ -165,7 +165,8 @@ commands.addUserCommand(
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
 
 	setPrefs({
-	  'extensions.downloadbar.userinterface': "panel", // Use embedded panel rather than download bar.
+	  'extensions.downloadbar.closebar'     : true   , // Use embedded panel rather than download bar.
+	  'extensions.downloadbar.userinterface': "panel",
 	});
 
       });
