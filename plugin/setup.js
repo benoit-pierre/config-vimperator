@@ -472,6 +472,40 @@ commands.addUserCommand(
 
       // }}}
 
+      // UI. {{{
+
+      try {
+	CustomizableUI.beginBatchUpdate();
+
+	// Add Firefox menu button at the end of the tab bar.
+	CustomizableUI.addWidgetToArea('ctraddon_appbutton', CustomizableUI.AREA_TABSTRIP);
+
+	// Add addons to the add-on bar (at the end, from left to right). {{{
+	if ('toolbar' == CustomizableUI.getAreaType('ctraddon_addon-bar')) {
+	  [
+	    /* FlashGot Media           */ 'flashgot-media-tbb',
+	    /* Download Status Bar      */ 'downloadbar-ddnbr',
+	    /* Greasemonkey             */ 'greasemonkey-tbb',
+	    /* NoScript                 */ 'noscript-tbb',
+	    /* RequestPolicy            */ 'requestpolicyToolbarButton',
+	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
+	    /* Referrer Control         */ 'referrercontrol-button',
+	    /* Stylish                  */ 'stylish-toolbar-button',
+	    /* Adblock                  */ 'abp-toolbarbutton',
+	    /* Disconnect               */ 'disconnect-item',
+	    /* Privacy Badger           */ 'toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button',
+	    /* HTTPS Everywhere         */ 'https-everywhere-button',
+	  ].forEach(function (b) {
+	    CustomizableUI.addWidgetToArea(b, 'ctraddon_addon-bar');
+	  });
+	}
+	// }}}
+      }
+      finally {
+	CustomizableUI.endBatchUpdate();
+      }
+
+      // }}}
   }
     catch (e) {
       liberator.echoerr(e);
