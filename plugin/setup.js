@@ -287,6 +287,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // HackTheWeb. {{{
+
+      installAddonIfNotAlready('HackTheWeb', 'hacktheweb@instantfox.com');
+
+      // }}}
+
       // HTTPS Everywhere. {{{
 
       installAddonIfNotAlready('HTTPS Everywhere', 'https-everywhere@eff.org', function() {
@@ -562,6 +568,7 @@ commands.addUserCommand(
 	    /* Disconnect               */ 'disconnect-item',
 	    /* Privacy Badger           */ 'toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
+	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
 	    CustomizableUI.addWidgetToArea(b, 'ctraddon_addon-bar');
 	  });
