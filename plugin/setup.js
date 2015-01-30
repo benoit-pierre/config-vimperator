@@ -322,6 +322,52 @@ commands.addUserCommand(
 
 	installGreasemonkeyScript('External play Youtube videos');
 	installGreasemonkeyScript('Input fields clear/paste buttons');
+	installGreasemonkeyScript('Youtube Center', function (script, storage) {
+	  var config = storage.getValue('YouTubeCenterSettings');
+	  if (config) {
+	    config = JSON.parse(config);
+	  }
+	  else {
+	    config = {}
+	  }
+	  config = Object.extend(config, {
+	    "playlistAutoPlay"                      : false,
+	    "enableYouTubeShortcuts"                : false,
+	    "topScrollPlayerAnimation"              : false,
+	    "topScrollPlayerEnabledOnlyVideoPlaying": false,
+	    "embed_defaultAutoplay"                 : false,
+	    "videoThumbnailAnimationEnabled"        : false,
+	    "forcePlayerType"                       : "html5",
+	    "embed_forcePlayerType"                 : "html5",
+	    "channel_forcePlayerType"               : "html5",
+	    "watchedVideosIndicator"                : false,
+	    "enableResize"                          : false,
+	    "preventAutoPlay"                       : true,
+	    "preventAutoBuffer"                     : true,
+	    "preventTabAutoPlay"                    : true,
+	    "preventTabAutoBuffer"                  : true,
+	    "preventTabPlaylistAutoPlay"            : true,
+	    "preventTabPlaylistAutoBuffer"          : true,
+	    "preventPlaylistAutoPlay"               : true,
+	    "preventPlaylistAutoBuffer"             : true,
+	    "enableShortcuts"                       : false,
+	    "enableVolume"                          : true,
+	    "volume"                                : 50,
+	    "enableRepeat"                          : false,
+	    "lightbulbEnable"                       : false,
+	    "channel_autoVideoQuality"              : "hd720",
+	    "channel_preventAutoPlay"               : true,
+	    "channel_enableVolume"                  : true,
+	    "channel_volume"                        : 50,
+	    "embed_autoVideoQuality"                : "hd720",
+	    "embed_preventAutoPlay"                 : true,
+	    "embed_enableVolume"                    : true,
+	    "embed_volume"                          : 50,
+	    "resizeEnable"                          : false,
+	    "aspectEnable"                          : false,
+	  });
+	  storage.setValue('YouTubeCenterSettings', JSON.stringify(config));
+	});
 
       });
 
