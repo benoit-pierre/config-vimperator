@@ -76,11 +76,51 @@ commands.addUserCommand(
 	return value_list.join(' ');
       }
 
-      function installGreasemonkeyScript(name) {
+      function installGreasemonkeyScript(name, configure) {
+
+        var scope = {};
+
+	Components.utils.import('resource://greasemonkey/miscapis.js', scope)
+	Components.utils.import('resource://greasemonkey/parseScript.js', scope);
+	Components.utils.import('resource://greasemonkey/remoteScript.js', scope);
+
+	var service = GM_util.getService();
 	var script_file = File('~/.vimperator/greasemonkey-scripts/' + sanitizeName(name) + '.user.js');
 	var script_uri = Services.io.newFileURI(script_file).spec;
+	var script_source = script_file.read();
+	var script = scope.parse(script_source, script_uri);
+	var configure_script = function (script) {
+	  log('Configuring "' + name + '" Greasemonkey script.');
+	  var storage = new scope.GM_ScriptStorage(script);
+	  configure(script, storage);
+	}
+
+	var old_script = service._config.getScriptById(script.id);
+
+	if (old_script) {
+	  log('Already installed "' + name + '" Greasemonkey script.');
+	  if (null != configure) {
+	    configure_script(old_script);
+	  }
+	  return;
+	}
+
 	log('Installing "' + name + '" Greasemonkey script.');
-	GM_util.showInstallDialog(script_uri, browser, GM_util.getService());
+
+	var remote_script = new scope.RemoteScript();
+	var tmpfile_name = scope.cleanFilename(script.name, 'gm_script') + '.user.js';
+	var tmpfile = GM_util.getTempFile(remote_script._tempDir, tmpfile_name);
+	GM_util.writeToFile(script_source, tmpfile, function() {
+	  remote_script.setScript(script, tmpfile);
+	  remote_script.download(function (sucess) {
+	    if (!sucess) {
+	      liberator.echoerr('could not download ' + script_uri);
+	      return;
+	    }
+	    remote_script.install();
+	    configure(remote_script.script);
+	  });
+	});
       }
 
       function installSearchEngine(name, alias) {
