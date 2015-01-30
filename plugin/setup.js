@@ -159,12 +159,6 @@ commands.addUserCommand(
 
       // Addons. {{{
 
-      // Adblock Plus. {{{
-
-      installAddonIfNotAlready('Adblock Plus', '{d10d0bf8-f5b5-c8b4-a8b2-2b9879e08c5d}');
-
-      // }}}
-
       // BetterPrivacy. {{{
 
       installAddonIfNotAlready('BetterPrivacy', '{d40f5e7b-d2cf-4856-b441-cc613eeffbe3}', function() {
@@ -573,6 +567,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // uBlock. {{{
+
+      installAddonIfNotAlready('uBlock', '{2b10c1c8-a11f-4bad-fe9c-1c11e82cac42}');
+
+      // }}}
+
       // }}}
 
       // Dictionaries. {{{
@@ -651,7 +651,7 @@ commands.addUserCommand(
 	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
 	    /* Referrer Control         */ 'referrercontrol-button',
 	    /* Stylish                  */ 'stylish-toolbar-button',
-	    /* Adblock                  */ 'abp-toolbarbutton',
+	    /* uBlock                   */ 'ublock-button',
 	    /* Disconnect               */ 'disconnect-item',
 	    /* Privacy Badger           */ 'toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
