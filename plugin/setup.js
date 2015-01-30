@@ -601,6 +601,7 @@ commands.addUserCommand(
 	'browser.tabs.closeWindowWithLastTab'     : false          , // Keep window open when closing last tab.
 	'browser.tabs.selectOwnerOnClose'         : true           , // Focus owner on tab close.
 	'datareporting.healthreport.uploadEnabled': false          , // Do not report to Mozilla...
+	'devtools.selfxss.count'                  : 100            , // Disable paste warning in devtools...
 	'devtools.theme'                          : "dark"         , // Use dark theme for developer tools.
 	'dom.event.clipboardevents.enabled'       : false          , // Disable clipboard events.
 	'general.smoothScroll'                    : false          , // Disable smooth scrolling.
