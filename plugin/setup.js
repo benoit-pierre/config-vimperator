@@ -606,6 +606,7 @@ commands.addUserCommand(
 	'dom.event.clipboardevents.enabled'       : false          , // Disable clipboard events.
 	'general.smoothScroll'                    : false          , // Disable smooth scrolling.
 	'general.warnOnAboutConfig'               : false          , // Disable about:config warning.
+	'media.peerconnection.enabled'            : false          , // Disable WebRTC and PeerConnection.
 	'nglayout.enable_drag_images'             : false          , // Disable image on drag and drop.
 	'privacy.donottrackheader.enabled'        : true           , // Enable DoNotTrack.
 	'signon.rememberSignons'                  : false          , // Disable password manager.
