@@ -385,12 +385,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // I don't care about cookies. {{{
-
-      installAddonIfNotAlready("I don't care about cookies", 'jid1-KKzOGWgsW3Ao4Q@jetpack');
-
-      // }}}
-
       // Privacy Badger. {{{
 
       installAddonIfNotAlready('Privacy Badger', 'jid1-MnnxcxisBPnSXQ@jetpack');
