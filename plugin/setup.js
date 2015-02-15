@@ -501,12 +501,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // RequestPolicy. {{{
-
-      installAddonIfNotAlready('RequestPolicy', 'requestpolicy@requestpolicy.com');
-
-      // }}}
-
       // Self-Destructing Cookies. {{{
 
       installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
@@ -644,7 +638,6 @@ commands.addUserCommand(
 	    /* Download Status Bar      */ 'downloadbar-ddnbr',
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* NoScript                 */ 'noscript-tbb',
-	    /* RequestPolicy            */ 'requestpolicyToolbarButton',
 	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
 	    /* Referrer Control         */ 'referrercontrol-button',
 	    /* Stylish                  */ 'stylish-toolbar-button',
