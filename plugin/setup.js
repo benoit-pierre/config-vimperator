@@ -601,6 +601,8 @@ commands.addUserCommand(
 	'general.smoothScroll'                    : false          , // Disable smooth scrolling.
 	'general.warnOnAboutConfig'               : false          , // Disable about:config warning.
 	'media.peerconnection.enabled'            : false          , // Disable WebRTC and PeerConnection.
+	'network.cookie.cookieBehavior'           : 1              , // Only cookies from the originating server are allowed.
+	'network.cookie.lifetimePolicy'           : 2              , // The cookie expires at the end of the session (when the browser closes).
 	'nglayout.enable_drag_images'             : false          , // Disable image on drag and drop.
 	'privacy.donottrackheader.enabled'        : true           , // Enable DoNotTrack.
 	'signon.rememberSignons'                  : false          , // Disable password manager.
