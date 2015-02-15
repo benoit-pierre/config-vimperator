@@ -604,7 +604,7 @@ commands.addUserCommand(
 	'network.cookie.cookieBehavior'           : 1              , // Only cookies from the originating server are allowed.
 	'network.cookie.lifetimePolicy'           : 2              , // The cookie expires at the end of the session (when the browser closes).
 	'nglayout.enable_drag_images'             : false          , // Disable image on drag and drop.
-	'privacy.donottrackheader.enabled'        : true           , // Enable DoNotTrack.
+	'privacy.donottrackheader.enabled'        : false          , // Disable DoNotTrack.
 	'signon.rememberSignons'                  : false          , // Disable password manager.
 	'toolkit.scrollbox.smoothScroll'          : false          , // Disable tab bar smooth scrolling.
 	'view_source.editor.external'             : true           , // Don't use internal editor for viewing sources.
