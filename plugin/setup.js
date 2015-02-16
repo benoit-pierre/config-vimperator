@@ -525,6 +525,7 @@ commands.addUserCommand(
 	installStylishStyle('Rock Paper Centered'                      , 'https://userstyles.org/styles/93689/rock-paper-centered');
 	installStylishStyle('Youtube Improved Layout'                  , null);
 	installStylishStyle('about:black'                              , 'https://userstyles.org/styles/42706/about-black');
+	installStylishStyle('uBlock Popup with no Firefox Navbar Fix'  , null);
 
       });
 
