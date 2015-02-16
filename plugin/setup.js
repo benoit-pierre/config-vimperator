@@ -188,12 +188,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Disconnect. {{{
-
-      installAddonIfNotAlready('Disconnect', '2.0@disconnect.me');
-
-      // }}}
-
       // Download Status Bar. {{{
 
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
@@ -636,7 +630,6 @@ commands.addUserCommand(
 	    /* Referrer Control         */ 'referrercontrol-button',
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* uBlock                   */ 'ublock-button',
-	    /* Disconnect               */ 'disconnect-item',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
 	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
