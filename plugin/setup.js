@@ -483,12 +483,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Referrer Control. {{{
-
-      installAddonIfNotAlready('Referrer Control', 'referrercontrol@qixinglu.com');
-
-      // }}}
-
       // Self-Destructing Cookies. {{{
 
       installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
@@ -631,7 +625,6 @@ commands.addUserCommand(
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
-	    /* Referrer Control         */ 'referrercontrol-button',
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* uBlock                   */ 'ublock-button',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
