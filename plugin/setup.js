@@ -496,6 +496,21 @@ commands.addUserCommand(
 
       // }}}
 
+      // Toggle animated GIFs. {{{
+
+      installAddonIfNotAlready('Toggle animated GIFs', 'giftoggle@simonsoftware.se', function() {
+
+	setPrefs({
+	  'extensions.togglegifs.defaultPaused'        : true, // Pause GIFs by default.
+	  'extensions.togglegifs.shortcutReset'        : ''  , // No shortcut for resetting GIFs.
+	  'extensions.togglegifs.shortcutToggle'       : ''  , // No shortcut for toggling GIFs.
+	  'extensions.togglegifs.toggleOnClick'        : true, // Toggle GIFs on click.
+	});
+
+      });
+
+      // }}}
+
       // Stylish. {{{
 
       installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}', function() {
