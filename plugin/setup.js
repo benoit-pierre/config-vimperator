@@ -385,12 +385,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Privacy Badger. {{{
-
-      installAddonIfNotAlready('Privacy Badger', 'jid1-MnnxcxisBPnSXQ@jetpack');
-
-      // }}}
-
       // NoScript. {{{
 
       installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}', function() {
@@ -643,7 +637,6 @@ commands.addUserCommand(
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* uBlock                   */ 'ublock-button',
 	    /* Disconnect               */ 'disconnect-item',
-	    /* Privacy Badger           */ 'toggle-button--jid1-mnnxcxisbpnsxqjetpack-pb-button',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
 	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
