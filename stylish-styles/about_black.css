@@ -54,12 +54,7 @@ ABOUT : BLANK
 
 @-moz-document url("about:blank") 
 {
-    html , 
-    body 
-    {
-        background-color: #000000 !important;
-        color: #FFFFFF !important;
-    }
+    body:empty { background-color: #000000 !important; }
 }
 
 
