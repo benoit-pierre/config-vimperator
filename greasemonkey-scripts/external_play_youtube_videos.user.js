@@ -5,7 +5,7 @@
 // @exclude     /^https?://(www\.)?youtube\.com//
 // @exclude     /^https?://apis.google.com//
 // @exclude     /^https?://plus.googleapis.com//
-// @grant       none
+// @grant       GM_addStyle
 // ==/UserScript==
 
 (function () {
@@ -195,118 +195,159 @@
     'xScGmv3f4F9F/vIA/gtGZKqq9sgcggAAAABJRU5ErkJggg==' +
     '';
 
-  function fix_videos(container, document) {
+  GM_addStyle(
+    'div.externalYoutube, span.externalYoutube {' +
+    'background-size: cover !important; ' +
+    'background-position: center center !important; ' +
+    '}' +
+    'div.externalYoutube {' +
+    'position: relative !important; ' +
+    '}' +
+    'span.externalYoutube {' +
+    'position: absolute !important; ' +
+    '}' +
+    '.externalYoutube a {' +
+    'color: #000000 !important; ' +
+    'background-color: transparent !important; ' +
+    'outline: 0 !important; ' +
+    'display: block !important; ' +
+    'position: absolute !important; ' +
+    '}' +
+    '.externalYoutube a img {' +
+    'border: 0 !important; ' +
+    'background: transparent !important; ' +
+    '}' +
+    'a.externalYoutube:not(:hover) span {' +
+    'display: none !important; ' +
+    '}' +
+    'a.externalYoutube:hover span {' +
+    'display: block !important; ' +
+    'position: absolute !important; ' +
+    '}' +
+    ''
+  );
+
+  function getPosition(element) {
+    var xPosition = 0;
+    var yPosition = 0;
+
+    while(element) {
+      xPosition += (element.offsetLeft - element.scrollLeft + element.clientLeft);
+      yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+      element = element.offsetParent;
+    }
+    return { x: xPosition, y: yPosition };
+  }
+
+  function fix_videos(container) {
+
+    if (1 != container.nodeType && 9 != container.nodeType)
+      return;
 
     log('fixing youtube videos in ' + container.nodeName);
-
-    var i, j, k, index;
 
     var bad_elements = [];
     var bad_ids = [];
 
     function inspect_risky_element(elem) {
-      log('inspect ' + elem.nodeName);
-      if (elem.className == 'externalYoutube') {
-        return;
+      if (elem.classList.contains('externalYoutube')) {
+        return true;
       }
-      var index = 0;
-      var risky_attributes = risky_elements[j].attributes;
-      for (k = 0; k < risky_attributes.length; k++) {
-        var risky_node = risky_attributes[k].nodeValue;
+      log('inspect ' + elem.nodeName + ' [' + elem.id + ']');
+      var risky_attributes = elem.attributes;
+      for (var k = 0; k < risky_attributes.length; k++) {
+        var risky_node = risky_attributes[k].value;
+        var index = 0;
         if (risky_node.indexOf('youtube-nocookie.com/') >= 0 ||
             risky_node.indexOf('youtube.com/') >= 0 ||
             risky_node.indexOf('ytimg.com/') >= 0) {
-          if (risky_node.indexOf('/v/') >= 0) {
-            index = risky_node.indexOf('/v/') + 3;
-          } else if (risky_node.indexOf('/vi/') >= 0) {
-            index = risky_node.indexOf('/vi/') + 4;
-          } else if (risky_node.indexOf('?v=') >= 0) {
-            index = risky_node.indexOf('?v=') + 3;
-          } else if (risky_node.indexOf('/embed/') >= 0) {
-            index = risky_node.indexOf('/embed/') + 7;
+          if ((index = risky_node.indexOf('/v/')) >= 0) {
+            index += 3;
+          } else if ((index = risky_node.indexOf('/vi/')) >= 0) {
+            index += 4;
+          } else if ((index = risky_node.indexOf('?v=')) >= 0) {
+            index += 3;
+          } else if ((index = risky_node.indexOf('/embed/')) >= 0) {
+            index += 7;
           }
-          else if (risky_node.indexOf('youtu.be/') >= 0)
-          {
-            index = risky_node.indexOf('youtu.be/') + 9;
-          }
-          if (index > 0) {
-            var video_id = risky_node.substring(index, index + 11);
-            bad_elements.push(elem);
-            bad_ids.push(video_id);
-          }
+        } else if ((index = risky_node.indexOf('youtu.be/')) >= 0) {
+          index += 9;
+        }
+        if (index > 0) {
+          var video_id = risky_node.substring(index, index + 11);
+          log('video: ' + video_id);
+          bad_elements.push(elem);
+          bad_ids.push(video_id);
           break;
         }
       }
+      return false;
     }
 
     var risky_elements;
     var risky_tags = ['a', 'object', 'embed', 'iframe'];
     var container_name = container.nodeName.toLowerCase();
 
-    for (i = 0; i < risky_tags.length; i++) {
+    for (var i = 0; i < risky_tags.length; i++) {
       if (container_name == risky_tags[i]) {
-        inspect_risky_element(container);
+        if (inspect_risky_element(container))
+          return;
       }
       risky_elements = container.getElementsByTagName(risky_tags[i]);
-      for (j = 0; j < risky_elements.length; j++) {
+      for (var j = 0; j < risky_elements.length; j++) {
         inspect_risky_element(risky_elements[j]);
       }
     }
 
     // Youtube videos on BoingBoing...
+    // TODO: check we actually are on BoingBoing!
     risky_elements = container.getElementsByClassName('video-container-yt');
-    for (j = 0; j < risky_elements.length; j++) {
+    for (var j = 0; j < risky_elements.length; j++) {
       inspect_risky_element(risky_elements[j]);
     }
     risky_elements = container.getElementsByClassName('lazyYT');
-    for (j = 0; j < risky_elements.length; j++) {
+    for (var j = 0; j < risky_elements.length; j++) {
       var video_id = risky_elements[j].getAttribute('data-youtube-id');
       bad_elements.push(risky_elements[j]);
       bad_ids.push(video_id);
     }
 
-    for (i = 0; i < bad_ids.length; i++) {
+    for (var i = 0; i < bad_ids.length; i++) {
       var bad_elem = bad_elements[i];
       var width, height;
       var video_id, video_block, button, icon;
-      var link_text;
+      var is_a_link;
       video_id = bad_ids[i];
       if (bad_elem.nodeName.toLowerCase() == 'a') {
         width = 0;
         height = 0;
-        link_text = bad_elem.innerHTML;
+        is_a_link = true;
       }
       else {
         var bbox = bad_elem.getBoundingClientRect();
         width = bbox.width;
         height = bbox.height;
-        link_text = null;
+        is_a_link = false;
       }
       if (width < 256 || height < 192) {
         width = 256;
         height = 192;
       }
-      video_block = document.createElement('div');
+      video_block = document.createElement(is_a_link ? 'span' : 'div');
+      video_block.className = 'externalYoutube';
       video_block.style.cssText =
         'width: ' + width + 'px !important; ' +
         'height: ' + height + 'px !important; ' +
-        'position: relative !important; ' +
-        'background-size: cover !important; ' +
-        'background-position: center center !important; ' +
         'background-image: url("https://i3.ytimg.com/vi/' + video_id + '/0.jpg") !important; ' +
-        '';
+      '';
       // Top-right go to Youtube button.
       button = document.createElement('a');
       button.className = 'externalYoutube';
       button.setAttribute('href', 'https://www.youtube.com/watch?v=' + video_id);
       button.setAttribute('target', '_blank');
       button.style.cssText =
-        'color: #000000 !important; ' +
-        'background-color: transparent !important; ' +
-        'display: block !important; ' +
         'width: ' + iconSize + 'px !important; ' +
         'height: ' + iconSize + 'px !important; ' +
-        'position: absolute !important; ' +
         'left: ' + (width - iconSize) + 'px !important; ' +
         'top: 0px !important; ' +
         '';
@@ -317,13 +358,10 @@
       // Centered play (in external player) button.
       button = document.createElement('a');
       button.setAttribute('href', 'youtube://' + video_id);
+      button.setAttribute('onclick', "arguments[0].stopPropagation(); window.open('youtube://" + video_id + "').close(); return false;");
       button.style.cssText =
-        'color: #000000 !important; ' +
-        'background-color: transparent !important; ' +
-        'display: block !important; ' +
         'width: ' + iconSize + 'px !important; ' +
         'height: ' + iconSize + 'px !important; ' +
-        'position: absolute !important; ' +
         'left: ' + ((width - iconSize) / 2) + 'px !important; ' +
         'top: ' + ((height - iconSize) / 2) + 'px !important; ' +
         '';
@@ -331,72 +369,48 @@
       icon.setAttribute('src', playIcon);
       button.appendChild(icon);
       video_block.appendChild(button);
-      if (link_text) {
-        var title = document.createElement('p');
-        title.textContent = link_text;
-        title.style.cssText =
-          'background: black !important; ' +
-          'color: white !important; ' +
-          'width: 100% !important; ' +
-          'text-align: center !important; ' +
-          'position: absolute !important; ' +
-          'font-style: normal !important; ' +
-          'font-size: 16px !important; ' +
-          'bottom: -16px !important; ' +
+      if (is_a_link) {
+        var bbox = bad_elem.getBoundingClientRect();
+        bad_elem.classList.add('externalYoutube');
+        video_block.style.cssText = video_block.style.cssText +
+          'left: ' + (bad_elem.offsetLeft + (bbox.width - width) / 2) + 'px !important; ' +
+          'top: ' + (bad_elem.offsetTop + (bbox.height - height) / 2) + 'px !important; ' +
           '';
-        video_block.appendChild(title);
-      }
-      bad_elements[i].parentNode.replaceChild(video_block, bad_elem);
-    }
-  }
-
-  function mutationHandler(mutationRecords, doc) {
-
-    mutationRecords.forEach(function (mutation) {
-      var elem = mutation.target;
-      log('mutation: ' + mutation.type + ' ' + elem.nodeName);
-      if ('IFRAME' == elem.nodeName) {
-        // fix_videos(elem.contentDocument, elem.contentDocument);
+        bad_elem.appendChild(video_block);
       }
       else {
-        fix_videos(elem, doc);
-      }
-    });
-  }
-
-  fix_videos(window.document, window.document);
-
-  window.document.addEventListener('DOMContentLoaded', function () {
-
-    log('window content loaded [' +
-        (window.top == window.self ? 'T' : 'I') + ':' +
-        (window.name || window.location.href) + ']');
-
-    // Circumvent Discourse link tracking...
-    if (typeof Discourse !== 'undefined') {
-      var trackClick = Discourse.ClickTrack.trackClick;
-      Discourse.ClickTrack.trackClick = function (e)
-      {
-        var s = e.currentTarget.getAttribute('href');
-        if (/^youtube:\/\//.test(s)) {
-          window.open(s).close();
-          e.stopPropagation();
-          e.preventDefault();
-          return false;
-        }
-        return true;
+        bad_elem.parentNode.replaceChild(video_block, bad_elem);
       }
     }
+  }
 
-    fix_videos(window.document, window.document);
+  // Circumvent Discourse link tracking...
+  if (typeof Discourse !== 'undefined') {
+    var trackClick = Discourse.ClickTrack.trackClick;
+    Discourse.ClickTrack.trackClick = function (e)
+    {
+      var s = e.currentTarget.getAttribute('href');
+      if (/^youtube:\/\//.test(s)) {
+        window.open(s).close();
+        e.stopPropagation();
+      e.preventDefault();
+      return false;
+      }
+      return true;
+    }
+  }
 
-    // var observer = new window.MutationObserver(function (m) { mutationHandler(m, window.document); });
-    // observer.observe(window.document, { childList: true, subtree: true, attributes: true });
+  fix_videos(document);
 
-    // var iframe_list = window.document.getElementsByTagName('iframe');
-    // contentDocument
-
-  }, false);
+  // Monitor the document for dynamically added elements.
+  var observer = new window.MutationObserver(function (mutationRecords) {
+    mutationRecords.forEach(function (mutation) {
+      for (var n = 0; n < mutation.addedNodes.length; ++n) {
+        fix_videos(mutation.addedNodes[n]);
+      }
+    });
+  });
+  observer.observe(window.document, { childList: true, subtree: true, attributes: false });
 
 })();
 
