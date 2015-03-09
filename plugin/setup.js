@@ -657,7 +657,7 @@ commands.addUserCommand(
       }
 
       // }}}
-  }
+    }
     catch (e) {
       liberator.echoerr(e);
     }
