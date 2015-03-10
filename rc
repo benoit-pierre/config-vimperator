@@ -27,6 +27,11 @@ set showstatuslinks=2
 
 " User styles. {{{
 
+" Inverted mode support.
+style -name invert chrome://* #content { filter: invert(100%) hue-rotate(180deg); }
+styledisable -name invert
+map v :styletoggle -name invert<CR>
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
