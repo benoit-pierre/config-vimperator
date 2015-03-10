@@ -1,0 +1,23 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("www.bbc.com") {
+
+  body
+  {
+    background: black !important;
+  }
+
+  .embedded-hyper h2 a,
+  .hyper-depth-header a.special-report
+  {
+    background: #29ffff !important;
+  }
+
+  div#content-wrapper,
+  div#content-wrapper img,
+  div#content-wrapper video
+  {
+    filter: invert(100%);
+  }
+
+}

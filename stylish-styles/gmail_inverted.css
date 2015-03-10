@@ -1,0 +1,86 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document regexp('https?://mail\\.google\\.com/mail/.*') {
+
+  /* Minimal */
+  :root,
+  img, video
+  {
+    filter: invert(100%);
+  }
+  /* - trimmed content indicator [...] */ div.ajR img,
+  /* - buttons (reply, prev/next, print, ...) */ img[src='images/cleardot.gif']
+  {
+    filter: none;
+  }
+
+  /* Don't modify label colors */
+  /* - label color picker cell */ td.JA-Kn-Jr-Kw-Jn,
+  /* - custom color picker cell */ div.ajZ-Jt,
+  /* - label (conversation) */ div.at,
+  /* - label (message) */ table.hX,
+  /* - label color (menu) */ span.aH5,
+  /* - label color (list) */ div.pM
+  {
+    filter: invert(100%);
+  }
+
+  /* Nicer to have */
+  /* - important icon */ div.pG,
+  /* - star icon */ span.T-KT,
+  /* - new notification (tab) */ div.aDG,
+  /* - new notification (conversation) */ div.aRI,
+  /* - apps menu cell */ li.gb_p,
+  /* - compose button */ div.T-I-KE,
+  /* - search button (bar) */ button.gbqfb,
+  /* - search button (menu) */ div.Zx,
+  /* - gmail menu button */ div.akh,
+  /* - selected label + count */ div.aiq
+  {
+    filter: invert(100%);
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  input:not([type=image]):not([type=submit]),
+  textarea,
+  select
+  {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Compatibility with "External play Youtube videos" GreaseMonkey script */
+  div.externalYoutube img,
+  span.externalYoutube img
+  {
+    filter: none;
+  }
+  div.externalYoutube,
+  span.externalYoutube
+  {
+    filter: invert(100%);
+  }
+
+}
+
+@-moz-document regexp('https?://(apis|docs)\\.google\\.com/.*(parent|origin)=https%3A%2F%2Fmail\\.google\\.com.*') {
+
+  img, video
+  {
+    filter: invert(100%);
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  input:not([type=image]):not([type=submit]),
+  textarea,
+  select
+  {
+    background: white !important;
+    color: black !important;
+  }
+
+}
+
+/*
+vim: ft=css sw=2
+*/

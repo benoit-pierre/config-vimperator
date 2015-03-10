@@ -1,0 +1,46 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("www.gamingonlinux.com") {
+
+  body
+  {
+    background-color: black !important;
+  }
+
+  div#body,
+  div#body img, video
+  {
+    filter: invert(100%);
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  div#body input:not([type=image]):not([type=submit]),
+  div#body textarea,
+  div#body select
+  {
+    background-color: white !important;
+    color: black !important;
+  }
+  div#body select option
+  {
+    background: black !important;
+    color: white !important;
+  }
+
+  /* Compatibility with "External play Youtube videos" GreaseMonkey script */
+  div.externalYoutube img,
+  span.externalYoutube img
+  {
+    filter: none !important;
+  }
+  div.externalYoutube,
+  span.externalYoutube
+  {
+    filter: invert(100%);
+  }
+
+}
+
+/*
+vim: ft=css sw=2
+*/

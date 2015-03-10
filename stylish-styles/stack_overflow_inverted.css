@@ -1,0 +1,26 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("stackoverflow.com") {
+
+  body
+  {
+    background: black !important;
+  }
+
+  div.container,
+  div.container img,
+  div.container video
+  {
+    filter: invert(100%);
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  div.container input:not([type=image]):not([type=submit]),
+  div.container textarea,
+  div.container select
+  {
+    background: white !important;
+    color: black !important;
+  }
+
+}

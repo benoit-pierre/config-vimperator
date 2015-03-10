@@ -1,0 +1,31 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("slashdot.org") {
+
+  body, section
+  {
+     background: black !important;
+  }
+
+  div.container,
+  div.body,
+  div#comments,
+  div#embbeded_login_modal,
+  li.active
+  {
+     background: black !important;
+     color: #bbb !important;
+  }
+
+  span.topic
+  {
+    z-index: 99;
+  }
+
+  h3, h5,
+  div.details,
+  div.message-bar
+  {
+    filter: invert(100%);
+  }
+}

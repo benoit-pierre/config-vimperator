@@ -515,17 +515,33 @@ commands.addUserCommand(
 
       installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}', function() {
 
-	installStylishStyle('Andrews\'s Dark Userstyles.org'           , 'https://userstyles.org/styles/1779/andrews-s-dark-userstyles-org');
-	installStylishStyle('Another dark Arch Linux theme'            , 'https://userstyles.org/styles/89090/another-dark-arch-linux-theme');
-	installStylishStyle('Black Youtube by Panos'                   , 'https://userstyles.org/styles/62289/black-youtube-by-panos');
-	installStylishStyle('Firefox FlatStudio Tabs (like tabs-2.css)', 'https://userstyles.org/styles/86995/firefox-flatstudio-tabs-like-tabs-2-css');
-	installStylishStyle('Fixed font Gmail'                         , 'https://userstyles.org/styles/52863/fixed-font-gmail');
-	installStylishStyle('Flashblock YouTube Fix'                   , null);
+	installStylishStyle('Amazon Inverted'                          , null);
+	installStylishStyle('Arch Linux Inverted'                      , null);
+	installStylishStyle('Ars Technica Inverted'                    , null);
+	installStylishStyle('BBC Inverted'                             , null);
+	installStylishStyle('BoingBoing Inverted'                      , null);
+	installStylishStyle('Dark input fields: white on black'        , null);
+	installStylishStyle('Firefox: about:black'                     , 'https://userstyles.org/styles/42706/about-black');
+	installStylishStyle('Firefox: flat tabs'                       , 'https://userstyles.org/styles/86995/firefox-flatstudio-tabs-like-tabs-2-css');
+	installStylishStyle('Firefox: uBlock popup with no navbar fix' , null);
+	installStylishStyle('Gaming on Linux Inverted'                 , null);
+	installStylishStyle('GitHub Inverted'                          , null);
+	installStylishStyle('Gmail Inverted'                           , null);
+	installStylishStyle('Gmail: fixed font'                        , 'https://userstyles.org/styles/52863/fixed-font-gmail');
+	installStylishStyle('Gmail: larger fonts'                      , 'https://userstyles.org/styles/109438/gmail-larger-fonts');
+	installStylishStyle('Kickstarter Inverted'                     , null);
 	installStylishStyle('NewsBlur - Kemwer Black'                  , 'https://userstyles.org/styles/86275/newsblur-kemwer-black');
-	installStylishStyle('Rock Paper Centered'                      , 'https://userstyles.org/styles/93689/rock-paper-centered');
-	installStylishStyle('Youtube Improved Layout'                  , null);
-	installStylishStyle('about:black'                              , 'https://userstyles.org/styles/42706/about-black');
-	installStylishStyle('uBlock Popup with no Firefox Navbar Fix'  , null);
+	installStylishStyle('OsNews Inverted'                          , null);
+	installStylishStyle('Phoronix Inverted'                        , null);
+	installStylishStyle('Rock, Paper, Shotgun, Inverted'           , null);
+	installStylishStyle('Rock, Paper, Shotgun: centered'           , 'https://userstyles.org/styles/93689/rock-paper-centered');
+	installStylishStyle('Slashdot Inverted'                        , null);
+	installStylishStyle('SourceForge Inverted'                     , null);
+	installStylishStyle('Stack Overflow Inverted'                  , null);
+	installStylishStyle('Wikipedia Inverted'                       , null);
+	installStylishStyle('Youtube: Black by Panos'                  , 'https://userstyles.org/styles/62289/black-youtube-by-panos');
+	installStylishStyle('Youtube: Flashblock fix'                  , null);
+	installStylishStyle('Youtube: improved layout'                 , null);
 
       });
 

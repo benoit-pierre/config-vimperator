@@ -1,0 +1,27 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("www.amazon.fr"), domain("www.amazon.com") {
+
+  body
+  {
+    background-color: black !important;
+  }
+
+  body,
+  iframe,
+  img,
+  video
+  {
+    filter: invert(100%);
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  input:not([type=image]):not([type=submit]),
+  textarea,
+  select
+  {
+    background-color: white !important;
+    color: black !important;
+  }
+
+}

@@ -1,0 +1,48 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("github.com") {
+
+  body
+  {
+    background: black !important;
+  }
+
+  div.wrapper,
+  iframe.render-viewer
+  {
+    filter: invert(100%);
+  }
+
+  img, video
+  {
+    background: white;
+    filter: invert(100%);
+  }
+
+  div.img-view img
+  {
+    filter: none;
+  }
+
+  /* Fix for transparent avatars */
+  img.avatar
+  {
+    background: white !important;
+  }
+
+  /* Compatibility with "Dark input fields: white on black" style */
+  input:not([type=image]):not([type=submit]),
+  textarea,
+  select
+  {
+    -moz-appearance: none !important;
+    background-color: white !important;
+    background-image: none !important;
+    color: black !important;
+  }
+
+}
+
+/*
+vim: ft=css sw=2
+*/
