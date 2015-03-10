@@ -659,11 +659,11 @@ commands.addUserCommand(
 	  [
 	    /* FlashGot Media           */ 'flashgot-media-tbb',
 	    /* Download Status Bar      */ 'downloadbar-ddnbr',
-	    /* Greasemonkey             */ 'greasemonkey-tbb',
-	    /* NoScript                 */ 'noscript-tbb',
-	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
 	    /* Stylish                  */ 'stylish-toolbar-button',
+	    /* Self-Destructing Cookies */ 'widget:jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack-self-destructing-cookies',
+	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* uBlock                   */ 'ublock-button',
+	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
 	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
