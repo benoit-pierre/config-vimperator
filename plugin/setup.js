@@ -586,6 +586,8 @@ commands.addUserCommand(
 
       // Firefox preferences. {{{
 
+      log('Configuring Firefox.');
+
       setPrefs({
 	'browser.download.animateNotifications'   : false          , // Disable download animations...
 	'browser.fullscreen.animateUp'            : 0              , // Disable fullscreen animations...
@@ -627,6 +629,8 @@ commands.addUserCommand(
       // }}}
 
       // Search engine. {{{
+
+      log('Installing seach engines.');
 
       installSearchEngine('Amazon France'            , 'azf');
       installSearchEngine('Arch Linux Bugs'          , 'archb');
