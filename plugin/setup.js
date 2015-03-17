@@ -472,10 +472,6 @@ commands.addUserCommand(
 	    'steampowered.com', 'steamstatic.com',
 	    'youtube.com', 'yimg.com', 'ytimg.com',
 	]);
-	config.prefs.allowedMimeRegExp = updateCharList(config.prefs.allowedMimeRegExp, [
-	    'video/[a-z]+@https?://[^/]+\.(?:youtube|ytimg|googleusercontent|googlevideo)\.com',
-	    'FONT@https?://assets-cdn.github.com',
-	]);
 
 	noscriptUtil.service.restoreConf(JSON.stringify(config));
 
