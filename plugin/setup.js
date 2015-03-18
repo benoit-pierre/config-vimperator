@@ -188,6 +188,18 @@ commands.addUserCommand(
 
       // }}}
 
+      // Cookie Controller. {{{
+
+      installAddonIfNotAlready('Cookie Controller', '{ac2cfa60-bc96-11e0-962b-0800200c9a66}', function() {
+
+	setPrefs({
+	  'extensions.cookieController.startOff': true, // Start in "no cookie" mode.
+	});
+
+      });
+
+      // }}}
+
       // Download Status Bar. {{{
 
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
@@ -644,6 +656,7 @@ commands.addUserCommand(
 	    /* Download Status Bar      */ 'downloadbar-ddnbr',
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
+	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
 	    /* uBlock                   */ 'ublock-button',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
