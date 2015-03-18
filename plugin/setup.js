@@ -593,6 +593,10 @@ commands.addUserCommand(
 
       installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}', function() {
 
+	setPrefs({
+	  'extensions.stylish.editorWindowMode': 1, // Open editor in a popup window.
+	});
+
 	installStylishStyle('Amazon Inverted'                          , null);
 	installStylishStyle('Arch Linux Inverted'                      , null);
 	installStylishStyle('Ars Technica Inverted'                    , null);
