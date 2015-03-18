@@ -280,21 +280,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // FlashBlock. {{{
-
-      installAddonIfNotAlready('Flashblock', '{3d7eb24f-2740-49df-8937-200b1cc08f8a}', function() {
-
-	setPrefs({
-	  'flashblock.enabled'            : true,
-	  'flashblock.html5video.blocked' : true,
-	  'flashblock.java.blocked'       : true,
-	  'flashblock.silverlight.blocked': true,
-	});
-
-      });
-
-      // }}}
-
       // FlashGot. {{{
 
       installAddonIfNotAlready('FlashGot', '{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}', function() {
