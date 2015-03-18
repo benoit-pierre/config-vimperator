@@ -484,6 +484,96 @@ commands.addUserCommand(
 
       // }}}
 
+      // Policeman. {{{
+
+      installAddonIfNotAlready('Policeman', 'policeman@futpib.addons.mozilla.org', function() {
+
+	// List of content types to show in the popup.
+	var contents = JSON.stringify({
+	  "_ANY_": true,
+	  "MEDIA": true,
+	  "WEBSOCKET": true,
+	  "DTD": true,
+	  "PING": true,
+	  "OTHER": true,
+	  "FONT": true,
+	});
+
+	// Enabled rule sets, order matters!
+	var rulesets = JSON.stringify([
+	  "default",
+	  "compatibility",
+	  "allow_from_file_to_file_and_web",
+	  "user_temporary",
+	  "user_persistent",
+	  "reject_any", // Block everything per default.
+	]);
+
+	var rules = JSON.stringify({
+	  // Allowed contents for all domains.
+	  "": {
+	    "": {
+	      "IMAGE": true,
+	      "STYLESHEET": true,
+	      "SCRIPT": true,
+	      "XMLHTTPREQUEST": true,
+	      "SUBDOCUMENT": true,
+	      "OBJECT": true
+	    }
+	  },
+	  // Github.
+	  "github.com": {
+	    "assets-cdn.github.com": { "FONT": true },
+	    "live.github.com": { "WEBSOCKET": true },
+	    "github.com": { "FONT": true }
+	  },
+	  // NewsBlur.
+	  "www.newsblur.com": {
+	    "www.newsblur.com": { "WEBSOCKET": true }
+	  },
+	  // Youtube.
+	  "www.youtube.com": {
+	    "googlevideo.com":{ "MEDIA": true }
+	  },
+	  // GOG.
+	  "www.gog.com": {
+	    "gog.com": { "FONT": true,"MEDIA":true }
+	  },
+	  // SourceForge.
+	  "sourceforge.net": {
+	    "a.fsdn.com": { "FONT": true }
+	  },
+	  // Slashdot.
+	  "slashdot.org": {
+	    "a.fsdn.com": { "FONT": true }
+	  },
+	  // Vine.
+	  "vine.co": {
+	    "mtc.cdn.vine.co": { "MEDIA": true }
+	  },
+	  // Vimeo.
+	  "player.vimeo.com": {
+	    "pdlvimeocdn-a.akamaihd.net": { "MEDIA": true },
+	    "s.vimeocdn.com": { "MEDIA": true },
+	    "pdl.vimeocdn.com": { "MEDIA": true }
+	  },
+	});
+
+	setPrefs({
+	  'extensions.policeman.blockedElements.frame.handler'             : 'passer', // Frames are not blocked.
+	  'extensions.policeman.blockedElements.image.handler'             : 'passer', // Images are not blocked.
+	  'extensions.policeman.blockedElements.object.handler'            : 'passer', // Objects are not blocked.
+	  'extensions.policeman.manager.enabledRuleSets'                   : rulesets, // Enabled rule sets.
+	  'extensions.policeman.ruleset.persistent.domainDomainTypeUnicode': rules   , // Persistent rules.
+	  'extensions.policeman.ui.panelview.autoReloadPageOnHiding'       : true    , // Automatically reload page when popup is hidden.
+	  'extensions.policeman.ui.popup.enabledContentTypes'              : contents, // List of content types to show in the popup.
+	  'extensions.policeman.ui.toolbarbutton.autoReloadPageOnAction'   : true    , // Reload page if needed.
+	});
+
+      });
+
+      // }}}
+
       // Toggle animated GIFs. {{{
 
       installAddonIfNotAlready('Toggle animated GIFs', 'giftoggle@simonsoftware.se', function() {
@@ -651,6 +741,7 @@ commands.addUserCommand(
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
+	    /* Policeman                */ 'policeman-toolbarbutton',
 	    /* uBlock                   */ 'ublock-button',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
