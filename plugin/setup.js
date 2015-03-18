@@ -280,6 +280,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // Flash Control. {{{
+
+      installAddonIfNotAlready('Flash Control', 'jid1-sNL73VCI4UB0Fw@jetpack');
+
+      // }}}
+
       // FlashGot. {{{
 
       installAddonIfNotAlready('FlashGot', '{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}', function() {
@@ -642,6 +648,7 @@ commands.addUserCommand(
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
+	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
 	    /* uBlock                   */ 'ublock-button',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
