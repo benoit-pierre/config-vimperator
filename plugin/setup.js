@@ -567,6 +567,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // uMatrix. {{{
+
+      installAddonIfNotAlready('uMatrix', 'uMatrix@raymondhill.net');
+
+      // }}}
+
       // }}}
 
       // Dictionaries. {{{
@@ -655,6 +661,7 @@ commands.addUserCommand(
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
+	    /* uMatrix                  */ 'umatrix-button',
 	    /* uBlock                   */ 'ublock-button',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
