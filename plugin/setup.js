@@ -391,92 +391,13 @@ commands.addUserCommand(
 	config.prefs['notify']             = false; // Disable notifications.
 	config.prefs['contentBlocker']     = true;  // Enable content blocking for white-listed sites too.
 	config.prefs['confirmUnblock']     = false; // Do not ask for confirmation when unblocking.
+	config.prefs['forbidFlash']        = false  // Don't block flash.
 	config.prefs['forbidFonts']        = false  // Don't block fonts.
 	config.prefs['forbidMedia']        = false  // Don't block HTML5 audio/video.
+	config.prefs['forbidPlugins']      = false  // Don't block plugins.
 	config.prefs['forbidWebGL']        = true;  // Disable WebGL.
 	config.prefs['autoReload.allTabs'] = false; // Only reload the current tab on permission change.
-
-	// Set a few untrusted.
-	config.prefs.untrusted = updateCharList(config.prefs.untrusted, [
-	    'ad6media.fr',
-	    'addthis.com',
-	    'addtoany.com', 'adnxs.com',
-	    'adroll.com',
-	    'adsonar.com',
-	    'adzerk.net',
-	    'amazon-adsystem.com',
-	    'areyouahuman.com',
-	    'bizible.com',
-	    'blockmetrics.com',
-	    'bluekai.com',
-	    'buysellads.com',
-	    'chartbeat.com',
-	    'chitika.net',
-	    'clicktale.net',
-	    'criteo.com',
-	    'crowdscience.com',
-	    'crsspxl.com',
-	    'crwdcntrl.net',
-	    'doubleclick.net',
-	    'effectivemeasure.net',
-	    'exelator.com',
-	    'exponential.com',
-	    'facebook.com', 'facebook.net',
-	    'fbcdn.net',
-	    'fmpub.net',
-	    'gamer-network.net',
-	    'gigya.com',
-	    'google-analytics.com', 'googleadservices.com', 'googlesyndication.com', 'googletagmanager.com', 'googletagservices.com',
-	    'gorillanation.com',
-	    'kameleoon.com',
-	    'kontera.com',
-	    'krxd.net',
-	    'livefyre.com',
-	    'lphbs.com',
-	    'meebo.com',
-	    'mixpanel.com',
-	    'moatads.com',
-	    'monetize-me.com',
-	    'mookie1.com',
-	    'mxpnl.com',
-	    'netline.com',
-	    'newrelic.com',
-	    'oneall.com',
-	    'optimizely.com',
-	    'outbrain.com',
-	    'pingdom.net',
-	    'revsci.net',
-	    'rpxnow.com',
-	    'sail-horizon.com',
-	    'scorecardresearch.com',
-	    'simpli.fi',
-	    'sitemeter.com',
-	    'smartadserver.com',
-	    'stumbleupon.com',
-	    'tagcommander.com',
-	    'truste.com',
-	    'twimg.com',
-	    'twitter.com',
-	    'viglink.com',
-	    'w00tads.com',
-	    'zedo.com',
-	]);
-
-	// Whitelist a few sites.
-	config.whitelist = updateCharList(config.whitelist, [
-	    'amazon.fr', 'images-amazon.com', 'ssl-images-amazon.com',
-	    'boingboing.net',
-	    'github.com',
-	    'google.com', 'google.fr', 'googleapis.com', 'gstatic.com',
-	    'ixquick.com', 'ixquick-proxy.com', 'https://ixquick.com',
-	    'mappy.com',
-	    'mozilla.net', 'mozilla.org', 'addons.mozilla.org',
-	    'noscript.net',
-	    'pagesjaunes.fr',
-	    'paypal.com', 'paypalobjects.com',
-	    'steampowered.com', 'steamstatic.com',
-	    'youtube.com', 'yimg.com', 'ytimg.com',
-	]);
+	config.prefs['global']             = true;  // Allow scripts globally.
 
 	noscriptUtil.service.restoreConf(JSON.stringify(config));
 
