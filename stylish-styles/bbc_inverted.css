@@ -13,9 +13,9 @@
     background: #29ffff !important;
   }
 
-  div#content-wrapper,
-  div#content-wrapper img,
-  div#content-wrapper video
+  body,
+  img,
+  video
   {
     filter: invert(100%);
   }

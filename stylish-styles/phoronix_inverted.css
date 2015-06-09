@@ -27,4 +27,16 @@
     color: black !important;
   }
 
+  /* Compatibility with "External play Youtube videos" GreaseMonkey script */
+  div.externalYoutube img,
+  span.externalYoutube img
+  {
+    filter: none;
+  }
+  div.externalYoutube,
+  span.externalYoutube
+  {
+    filter: invert(100%);
+  }
+
 }
