@@ -597,6 +597,11 @@ commands.addUserCommand(
 	CustomizableUI.endBatchUpdate();
       }
 
+      // Cookie Controller mode is reset when the button moved...
+      setPrefs({
+	'extensions.cookieController.startOff': true, // Start in "no cookie" mode.
+      });
+
       // }}}
     }
     catch (e) {
