@@ -495,9 +495,9 @@ commands.addUserCommand(
 
       // }}}
 
-      // uBlock. {{{
+      // uBlock Origin. {{{
 
-      installAddonIfNotAlready('uBlock', '{2b10c1c8-a11f-4bad-fe9c-1c11e82cac42}');
+      installAddonIfNotAlready('uBlock Origin', 'uBlock0@raymondhill.net');
 
       // }}}
 
@@ -599,7 +599,7 @@ commands.addUserCommand(
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
 	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
 	    /* uMatrix                  */ 'umatrix-button',
-	    /* uBlock                   */ 'ublock-button',
+	    /* uBlock Origin            */ 'ublock0-button',
 	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
 	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
