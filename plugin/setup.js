@@ -508,41 +508,43 @@ commands.addUserCommand(
       log('Configuring Firefox.');
 
       setPrefs({
-	'browser.download.animateNotifications'   : false          , // Disable download animations...
-	'browser.fullscreen.animateUp'            : 0              , // Disable fullscreen animations...
-	'browser.link.open_newwindow'             : 1              , // Open links, that would normally open in a new window, in the current tab/window.
-	'browser.link.open_newwindow.restriction' : 0              , // Divert all links according to browser.link.open_newwindow.
-	'browser.newtab.url'                      : 'about:blank'  , // Set new tab page to blank.
-	'browser.panorama.animate_zoom'           : false          , // Disable tab-groups animations...
-	'browser.safebrowsing.enabled'            : false          , // Do not report to Google...
-	'browser.safebrowsing.malware.enabled'    : false          ,
-	'browser.sessionstore.interval'           : 60000          , // Save session every minute.
-	'browser.startup.homepage'                : 'about:blank'  , // Set startup page to blank.
-	'browser.startup.page'                    : 3              , // And restore last session on startup.
-	'browser.tabs.animate'                    : false          , // And no animations...
-	'browser.tabs.closeButtons'               : 3              , // No close button on tabs.
-	'browser.tabs.closeWindowWithLastTab'     : false          , // Keep window open when closing last tab.
-	'browser.tabs.selectOwnerOnClose'         : true           , // Focus owner on tab close.
-	'datareporting.healthreport.uploadEnabled': false          , // Do not report to Mozilla...
-	'devtools.selfxss.count'                  : 100            , // Disable paste warning in devtools...
-	'devtools.theme'                          : "dark"         , // Use dark theme for developer tools.
-	'dom.event.clipboardevents.enabled'       : false          , // Disable clipboard events.
-	'general.smoothScroll'                    : false          , // Disable smooth scrolling.
-	'general.warnOnAboutConfig'               : false          , // Disable about:config warning.
-	'media.peerconnection.enabled'            : false          , // Disable WebRTC and PeerConnection.
-	'media.volume_scale'                      : '0.125'        , // Change HTML5 default audio level from 'my ears will melt' to 50%...
-	'network.cookie.cookieBehavior'           : 1              , // Only cookies from the originating server are allowed.
-	'network.cookie.lifetimePolicy'           : 2              , // The cookie expires at the end of the session (when the browser closes).
-	'network.http.referer.XOriginPolicy'      : 1              , // Only send if base domains match.
-	'network.http.referer.spoofSource'        : true           , // Spoof the referrer and use the target URI instead.
-	'network.http.referer.trimmingPolicy'     : 2              , // Send scheme, host and port.
-	'network.http.sendRefererHeader'          : 1              , // Send only when links are clicked.
-	'nglayout.enable_drag_images'             : false          , // Disable image on drag and drop.
-	'privacy.donottrackheader.enabled'        : false          , // Disable DoNotTrack.
-	'signon.rememberSignons'                  : false          , // Disable password manager.
-	'toolkit.scrollbox.smoothScroll'          : false          , // Disable tab bar smooth scrolling.
-	'view_source.editor.external'             : true           , // Don't use internal editor for viewing sources.
-	'view_source.editor.path'                 : "/usr/bin/gvim",
+	'browser.download.animateNotifications'      : false          , // Disable download animations...
+	'browser.fullscreen.animateUp'               : 0              , // Disable fullscreen animations...
+	'browser.link.open_newwindow'                : 1              , // Open links, that would normally open in a new window, in the current tab/window.
+	'browser.link.open_newwindow.restriction'    : 0              , // Divert all links according to browser.link.open_newwindow.
+	'browser.newtab.url'                         : 'about:blank'  , // Set new tab page to blank.
+	'browser.panorama.animate_zoom'              : false          , // Disable tab-groups animations...
+	'browser.safebrowsing.enabled'               : false          , // Do not report to Google...
+	'browser.safebrowsing.malware.enabled'       : false          ,
+	'browser.sessionstore.interval'              : 60000          , // Save session every minute.
+	'browser.sessionstore.privacy_level'         : 2              , // Never store extra session data (e.g.: session cookies).
+	'browser.sessionstore.privacy_level_deferred': 2              , // Same when quitting with browser.startup.page *not* set to restore previous session on startup.
+	'browser.startup.homepage'                   : 'about:blank'  , // Set startup page to blank.
+	'browser.startup.page'                       : 3              , // And restore last session on startup.
+	'browser.tabs.animate'                       : false          , // And no animations...
+	'browser.tabs.closeButtons'                  : 3              , // No close button on tabs.
+	'browser.tabs.closeWindowWithLastTab'        : false          , // Keep window open when closing last tab.
+	'browser.tabs.selectOwnerOnClose'            : true           , // Focus owner on tab close.
+	'datareporting.healthreport.uploadEnabled'   : false          , // Do not report to Mozilla...
+	'devtools.selfxss.count'                     : 100            , // Disable paste warning in devtools...
+	'devtools.theme'                             : "dark"         , // Use dark theme for developer tools.
+	'dom.event.clipboardevents.enabled'          : false          , // Disable clipboard events.
+	'general.smoothScroll'                       : false          , // Disable smooth scrolling.
+	'general.warnOnAboutConfig'                  : false          , // Disable about:config warning.
+	'media.peerconnection.enabled'               : false          , // Disable WebRTC and PeerConnection.
+	'media.volume_scale'                         : '0.125'        , // Change HTML5 default audio level from 'my ears will melt' to 50%...
+	'network.cookie.cookieBehavior'              : 1              , // Only cookies from the originating server are allowed.
+	'network.cookie.lifetimePolicy'              : 2              , // The cookie expires at the end of the session (when the browser closes).
+	'network.http.referer.XOriginPolicy'         : 1              , // Only send if base domains match.
+	'network.http.referer.spoofSource'           : true           , // Spoof the referrer and use the target URI instead.
+	'network.http.referer.trimmingPolicy'        : 2              , // Send scheme, host and port.
+	'network.http.sendRefererHeader'             : 1              , // Send only when links are clicked.
+	'nglayout.enable_drag_images'                : false          , // Disable image on drag and drop.
+	'privacy.donottrackheader.enabled'           : false          , // Disable DoNotTrack.
+	'signon.rememberSignons'                     : false          , // Disable password manager.
+	'toolkit.scrollbox.smoothScroll'             : false          , // Disable tab bar smooth scrolling.
+	'view_source.editor.external'                : true           , // Don't use internal editor for viewing sources.
+	'view_source.editor.path'                    : "/usr/bin/gvim",
       });
 
       // }}}
