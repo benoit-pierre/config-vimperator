@@ -188,18 +188,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Cookie Controller. {{{
-
-      installAddonIfNotAlready('Cookie Controller', '{ac2cfa60-bc96-11e0-962b-0800200c9a66}', function() {
-
-	setPrefs({
-	  'extensions.cookieController.startOff': true, // Start in "no cookie" mode.
-	});
-
-      });
-
-      // }}}
-
       // Download Status Bar. {{{
 
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
@@ -595,7 +583,6 @@ commands.addUserCommand(
 	    /* Download Status Bar      */ 'downloadbar-ddnbr',
 	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
-	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
 	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
 	    /* uMatrix                  */ 'umatrix-button',
@@ -612,11 +599,6 @@ commands.addUserCommand(
       finally {
 	CustomizableUI.endBatchUpdate();
       }
-
-      // Cookie Controller mode is reset when the button moved...
-      setPrefs({
-	'extensions.cookieController.startOff': true, // Start in "no cookie" mode.
-      });
 
       // }}}
     }
