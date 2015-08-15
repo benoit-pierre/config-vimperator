@@ -452,27 +452,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Tab Mix Plus. {{{
-
-      installAddonIfNotAlready('Tab Mix Plus', '{dc572301-7619-498c-a57d-39143191b318}', function() {
-
-	setPrefs({
-	  'extensions.tabmix.focusTab'                : 4    , // Focus last selected tab on close.
-	  'extensions.tabmix.hideAllTabsButton'       : false, // Show tab bar "all tabs" button.
-	  'extensions.tabmix.hideTabBarButton'        : true , // Hide tab bar "close tab" button.
-	  'extensions.tabmix.hideTabbar'              : 0    , // Never hide tab bar.
-	  'extensions.tabmix.linkTarget'              : true , // Open links with a target attribute in current tab.
-	  'extensions.tabmix.moveTabOnDragging'       : true , // Directly move tab on dragging.
-	  'extensions.tabmix.newTabButton'            : false, // Hide tab bar "new tab" button.
-	  'extensions.tabmix.openNewTabNext'          : true , // Open new tabs on the right of current tab.
-	  'extensions.tabmix.openTabNext'             : true , // Open tabs on the right of current tab.
-	  'extensions.tabmix.tabs.closeButtons.enable': false, // Hide tabs close button.
-	});
-
-      });
-
-      // }}}
-
       // uBlock Origin. {{{
 
       installAddonIfNotAlready('uBlock Origin', 'uBlock0@raymondhill.net');
