@@ -174,17 +174,7 @@ commands.addUserCommand(
 
       // Classic Theme Restorer. {{{
 
-      installAddonIfNotAlready('Classic Theme Restorer', 'ClassicThemeRestorer@ArisT2Noia4dev', function() {
-
-	setPrefs({
-	  'extensions.classicthemerestorer.bmanimation' : false         , // Disable bookmark animation.
-	  'extensions.classicthemerestorer.closeabarbut': true          , // Hide addon bar close button.
-	  'extensions.classicthemerestorer.hidenavbar'  : false         , // Don't hide navigation bar (let vimperator handle it).
-	  'extensions.classicthemerestorer.pananimation': false         , // Disable panel animation.
-	  'extensions.classicthemerestorer.tabs'        : 'tabs_default', // Use tabs default look (for compatibility with some styles).
-	});
-
-      });
+      installAddonIfNotAlready('Classic Theme Restorer', 'ClassicThemeRestorer@ArisT2Noia4dev');
 
       // }}}
 
@@ -523,7 +513,6 @@ commands.addUserCommand(
 	'browser.startup.homepage'                   : 'about:blank'  , // Set startup page to blank.
 	'browser.startup.page'                       : 3              , // And restore last session on startup.
 	'browser.tabs.animate'                       : false          , // And no animations...
-	'browser.tabs.closeButtons'                  : 3              , // No close button on tabs.
 	'browser.tabs.closeWindowWithLastTab'        : false          , // Keep window open when closing last tab.
 	'browser.tabs.selectOwnerOnClose'            : true           , // Focus owner on tab close.
 	'datareporting.healthreport.uploadEnabled'   : false          , // Do not report to Mozilla...
