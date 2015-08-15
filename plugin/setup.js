@@ -426,7 +426,7 @@ commands.addUserCommand(
 	installStylishStyle('BoingBoing Inverted'                      , null);
 	installStylishStyle('Dark input fields: white on black'        , null);
 	installStylishStyle('Firefox: about:black'                     , 'https://userstyles.org/styles/42706/about-black');
-	installStylishStyle('Firefox: flat tabs'                       , 'https://userstyles.org/styles/86995/firefox-flatstudio-tabs-like-tabs-2-css');
+	installStylishStyle('Firefox: Minimal (customized)'            , 'https://userstyles.org/styles/111261/minimal-firefox');
 	installStylishStyle('Firefox: uBlock popup with no navbar fix' , null);
 	installStylishStyle('Gaming on Linux Inverted'                 , null);
 	installStylishStyle('GitHub Inverted'                          , null);
