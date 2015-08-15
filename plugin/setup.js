@@ -301,24 +301,7 @@ commands.addUserCommand(
 
       // NoScript. {{{
 
-      installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}', function() {
-
-	var config = JSON.parse(noscriptUtil.service.serializeConf());
-
-	config.prefs['notify']             = false; // Disable notifications.
-	config.prefs['contentBlocker']     = true;  // Enable content blocking for white-listed sites too.
-	config.prefs['confirmUnblock']     = false; // Do not ask for confirmation when unblocking.
-	config.prefs['forbidFlash']        = false  // Don't block flash.
-	config.prefs['forbidFonts']        = false  // Don't block fonts.
-	config.prefs['forbidMedia']        = false  // Don't block HTML5 audio/video.
-	config.prefs['forbidPlugins']      = false  // Don't block plugins.
-	config.prefs['forbidWebGL']        = true;  // Disable WebGL.
-	config.prefs['autoReload.allTabs'] = false; // Only reload the current tab on permission change.
-	config.prefs['global']             = true;  // Allow scripts globally.
-
-	noscriptUtil.service.restoreConf(JSON.stringify(config));
-
-      });
+      installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}');
 
       // }}}
 
