@@ -405,6 +405,19 @@ commands.addUserCommand(
 
       // }}}
 
+      // Self-Destructing Cookies. {{{
+
+      installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
+
+	setPrefs({
+	  'extensions.jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.displayNotification': false, // Disable notifications.
+	  'extensions.jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack.strictAccess'       : true , // Use strick access policy.
+	});
+
+      });
+
+      // }}}
+
       // Toggle animated GIFs. {{{
 
       installAddonIfNotAlready('Toggle animated GIFs', 'giftoggle@simonsoftware.se', function() {
@@ -584,6 +597,7 @@ commands.addUserCommand(
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* Cookie Controller        */ 'cookieControllerToggleButton', 'cookieControllerPermMenubutton',
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
+	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
 	    /* uMatrix                  */ 'umatrix-button',
 	    /* uBlock                   */ 'ublock-button',
 	    /* NoScript                 */ 'noscript-tbb',
