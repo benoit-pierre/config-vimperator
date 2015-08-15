@@ -534,12 +534,6 @@ commands.addUserCommand(
 	'general.warnOnAboutConfig'                  : false          , // Disable about:config warning.
 	'media.peerconnection.enabled'               : false          , // Disable WebRTC and PeerConnection.
 	'media.volume_scale'                         : '0.125'        , // Change HTML5 default audio level from 'my ears will melt' to 50%...
-	'network.cookie.cookieBehavior'              : 1              , // Only cookies from the originating server are allowed.
-	'network.cookie.lifetimePolicy'              : 2              , // The cookie expires at the end of the session (when the browser closes).
-	'network.http.referer.XOriginPolicy'         : 1              , // Only send if base domains match.
-	'network.http.referer.spoofSource'           : true           , // Spoof the referrer and use the target URI instead.
-	'network.http.referer.trimmingPolicy'        : 2              , // Send scheme, host and port.
-	'network.http.sendRefererHeader'             : 1              , // Send only when links are clicked.
 	'nglayout.enable_drag_images'                : false          , // Disable image on drag and drop.
 	'privacy.donottrackheader.enabled'           : false          , // Disable DoNotTrack.
 	'signon.rememberSignons'                     : false          , // Disable password manager.
