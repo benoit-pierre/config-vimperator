@@ -193,68 +193,7 @@ commands.addUserCommand(
 
       // FireGestures. {{{
 
-      installAddonIfNotAlready('FireGestures', 'firegestures@xuldev.org', function() {
-
-	// Update mappings. {{{
-
-	var all_mappings = FireGestures._gestureMapping.getMappingArray();
-	var custom_mappings = [
-	  ['Back'                  , 'U'         , 'Browser:Back'                                                                                                       ],
-	  ['Forward'               , 'D'         , 'Browser:Forward'                                                                                                    ],
-	  ['Reload'                , 'UD'        , 'Browser:Reload'                                                                                                     ],
-	  ['Undo Close Tab'        , 'LR'        , 'FireGestures:UndoCloseTab'                                                                                          ],
-	  ['[Popup] List all tabs' , 'RL'        , 'FireGestures:AllTabsPopup'                                                                                          ],
-	  ['Previous Tab'          , 'wheel-up'  , 'FireGestures:PreviousTab'                                                                                           ],
-	  ['Next Tab'              , 'wheel-down', 'FireGestures:NextTab'                                                                                               ],
-	  ['Scroll to Top'         , 'LU'        , 'FireGestures:ScrollTop'                                                                                             ],
-	  ['Scroll to Bottom'      , 'LD'        , 'FireGestures:ScrollBottom'                                                                                          ],
-	  ['Close Tab, Focus Left' , 'L'         , 'var t = gBrowser.mCurrentTab; if (t.previousSibling) --gBrowser.mTabContainer.selectedIndex; gBrowser.removeTab(t);'],
-	  ['Close Tab, Focus Right', 'R'         , 'var t = gBrowser.mCurrentTab; if (t.nextSibling) ++gBrowser.mTabContainer.selectedIndex; gBrowser.removeTab(t);'    ],
-	];
-
-	// Update existing mappings.
-	for (var i = 0; i < all_mappings.length; ++i) {
-	  var mapping = all_mappings[i];
-	  for (var j = 0; j < custom_mappings.length; ++j) {
-	    var custom = custom_mappings[j];
-	    // Same mapping (name)?
-	    if (mapping[1] == custom[0]) {
-	      // Update mapping gesture.
-	      mapping[3] = custom[1];
-	      // Update mapping script if applicable.
-	      if (2 == mapping[0]) {
-		mapping[2] = custom[2];
-	      }
-	      // Remove mapping from the custom table so we don't duplicate it latter.
-	      custom_mappings.splice(j, 1);
-	      break;
-	    }
-	    // Same gesture?
-	    if (mapping[3] == custom[1]) {
-	      // Clear conflicting gesture.
-	      mapping[3] = ''
-	    }
-	  }
-	}
-
-	// Add new mappings.
-	for (var j = 0; j < custom_mappings.length; ++j) {
-	  var custom = custom_mappings[j];
-	  all_mappings.push([
-	    2,         // Type.
-	    custom[0], // Name.
-	    custom[2], // Command.
-	    custom[1], // Gesture.
-	    null,      // Flags.
-	  ]);
-	}
-
-	// Save back all mappings.
-	FireGestures._gestureMapping.saveUserMapping(all_mappings);
-
-	// }}}
-
-      });
+      installAddonIfNotAlready('FireGestures', 'firegestures@xuldev.org');
 
       // }}}
 
