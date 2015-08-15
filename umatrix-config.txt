@@ -1,0 +1,78 @@
+{
+  "app": "uMatrix",
+  "version": "0.9.2.1",
+  "when": 1439646634581,
+  "settings": {
+    "spoofUserAgentWith": "# http://techblog.willshouse.com/2012/01/03/most-common-user-agents/\n# using ua string which are same browser as real one may work better overall\nMozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36\nMozilla/5.0 (Windows NT 6.1; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/600.5.17 (KHTML, like Gecko) Version/8.0.5 Safari/600.5.17\nMozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.118 Safari/537.36\nMozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36\nMozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36\nMozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36\nMozilla/5.0 (Windows NT 6.3; WOW64; rv:37.0) Gecko/20100101 Firefox/37.0",
+    "spoofUserAgentEvery": 5,
+    "spoofUserAgent": false,
+    "processReferer": false,
+    "processHyperlinkAuditing": true,
+    "popupScopeLevel": "site",
+    "maxLoggedRequests": 1000,
+    "iconBadgeEnabled": false,
+    "externalHostsFiles": "",
+    "displayTextSize": "16px",
+    "deleteLocalStorage": true,
+    "deleteUnusedSessionCookiesAfter": 20,
+    "deleteUnusedSessionCookies": false,
+    "deleteCookies": true,
+    "colorBlindFriendly": false,
+    "collapseBlocked": false,
+    "clearBrowserCacheAfter": 60,
+    "clearBrowserCache": true,
+    "autoUpdate": true
+  },
+  "rules": "* * * block\n* * css allow\n* * image allow\n* 1st-party frame allow\n* 1st-party script allow\n* 1st-party xhr allow",
+  "hostsFiles": {
+    "assets/thirdparties/mirror1.malwaredomains.com/files/immortal_domains.txt": {
+      "title": "Long-lived malware domains",
+      "homeURL": "http://dns-bh.sagadc.org/immortal_domains.txt",
+      "off": false,
+      "entryCount": 4019,
+      "entryUsedCount": 1
+    },
+    "assets/thirdparties/mirror1.malwaredomains.com/files/justdomains": {
+      "title": "Malware domains",
+      "homeURL": "http://malwaredomains.lehigh.edu/files/justdomains",
+      "off": false,
+      "entryCount": 9448,
+      "entryUsedCount": 9354
+    },
+    "assets/thirdparties/pgl.yoyo.org/as/serverlist": {
+      "title": "Peter Lowe’s Ad server list",
+      "homeURL": "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext",
+      "off": false,
+      "entryCount": 2392,
+      "entryUsedCount": 965
+    },
+    "assets/thirdparties/www.malwaredomainlist.com/hostslist/hosts.txt": {
+      "title": "Malware Domain List",
+      "homeURL": "http://www.malwaredomainlist.com/hostslist/hosts.txt",
+      "off": false,
+      "entryCount": 1430,
+      "entryUsedCount": 1423
+    },
+    "assets/thirdparties/hosts-file.net/ad-servers": {
+      "title": "hpHosts’s Ad and tracking servers",
+      "homeURL": "http://hosts-file.net/ad_servers.txt",
+      "off": false,
+      "entryCount": 44931,
+      "entryUsedCount": 40186
+    },
+    "assets/thirdparties/someonewhocares.org/hosts/hosts": {
+      "title": "Dan Pollock’s hosts file",
+      "homeURL": "http://someonewhocares.org/hosts/hosts",
+      "off": false,
+      "entryCount": 11399,
+      "entryUsedCount": 9433
+    },
+    "assets/thirdparties/winhelp2002.mvps.org/hosts.txt": {
+      "title": "MVPS HOSTS",
+      "homeURL": "http://winhelp2002.mvps.org/hosts.txt",
+      "off": false,
+      "entryCount": 13585,
+      "entryUsedCount": 13585
+    }
+  }
+}
