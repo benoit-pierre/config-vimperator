@@ -25,6 +25,13 @@ set showstatuslinks=2
 
 " }}}
 
+" Key mappings. {{{
+
+" Shortcut for "reader view" mode.
+map ,rv :emenu View.Enter Reader View<CR>
+
+" }}}
+
 " User styles. {{{
 
 " Inverted mode support.
