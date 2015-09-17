@@ -13,59 +13,59 @@
     "iconBadgeEnabled": false,
     "externalHostsFiles": "",
     "displayTextSize": "16px",
-    "deleteLocalStorage": true,
+    "deleteLocalStorage": false,
     "deleteUnusedSessionCookiesAfter": 20,
     "deleteUnusedSessionCookies": false,
-    "deleteCookies": true,
+    "deleteCookies": false,
     "colorBlindFriendly": false,
     "collapseBlocked": false,
     "clearBrowserCacheAfter": 60,
     "clearBrowserCache": true,
     "autoUpdate": true
   },
-  "rules": "* * * block\n* * css allow\n* * image allow\n* 1st-party frame allow\n* 1st-party script allow\n* 1st-party xhr allow",
+  "rules": "* * * block\n* * css allow\n* * image allow\n* * other block\n* * plugin block\n* 1st-party cookie allow\n* 1st-party frame allow\n* 1st-party script allow\n* 1st-party xhr allow\nhttps-strict: * true\nreferrer-spoof: * true\nmatrix-off: about-scheme true\nmatrix-off: behind-the-scene true\nmatrix-off: chrome-extension-scheme true\nmatrix-off: chrome-scheme true\nmatrix-off: localhost true\nmatrix-off: opera-scheme true",
   "hostsFiles": {
     "assets/thirdparties/mirror1.malwaredomains.com/files/immortal_domains.txt": {
       "title": "Long-lived malware domains",
       "homeURL": "http://dns-bh.sagadc.org/immortal_domains.txt",
       "off": false,
-      "entryCount": 4019,
-      "entryUsedCount": 1
+      "entryCount": 3986,
+      "entryUsedCount": 2
     },
     "assets/thirdparties/mirror1.malwaredomains.com/files/justdomains": {
       "title": "Malware domains",
       "homeURL": "http://malwaredomains.lehigh.edu/files/justdomains",
       "off": false,
-      "entryCount": 9448,
-      "entryUsedCount": 9354
+      "entryCount": 10376,
+      "entryUsedCount": 10283
     },
     "assets/thirdparties/pgl.yoyo.org/as/serverlist": {
       "title": "Peter Lowe’s Ad server list",
       "homeURL": "http://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext",
       "off": false,
-      "entryCount": 2392,
-      "entryUsedCount": 965
+      "entryCount": 2395,
+      "entryUsedCount": 971
     },
     "assets/thirdparties/www.malwaredomainlist.com/hostslist/hosts.txt": {
       "title": "Malware Domain List",
       "homeURL": "http://www.malwaredomainlist.com/hostslist/hosts.txt",
       "off": false,
-      "entryCount": 1430,
-      "entryUsedCount": 1423
+      "entryCount": 1443,
+      "entryUsedCount": 1436
     },
     "assets/thirdparties/hosts-file.net/ad-servers": {
       "title": "hpHosts’s Ad and tracking servers",
       "homeURL": "http://hosts-file.net/ad_servers.txt",
       "off": false,
-      "entryCount": 44931,
-      "entryUsedCount": 40186
+      "entryCount": 45116,
+      "entryUsedCount": 40338
     },
     "assets/thirdparties/someonewhocares.org/hosts/hosts": {
       "title": "Dan Pollock’s hosts file",
       "homeURL": "http://someonewhocares.org/hosts/hosts",
       "off": false,
-      "entryCount": 11399,
-      "entryUsedCount": 9433
+      "entryCount": 11494,
+      "entryUsedCount": 9510
     },
     "assets/thirdparties/winhelp2002.mvps.org/hosts.txt": {
       "title": "MVPS HOSTS",
