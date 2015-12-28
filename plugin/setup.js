@@ -356,7 +356,8 @@ commands.addUserCommand(
 
       setPrefs({
 	'browser.download.animateNotifications'      : false          , // Disable download animations...
-	'browser.fullscreen.animateUp'               : 0              , // Disable fullscreen animations...
+	'browser.fullscreen.animate'                 : false          , // Disable fullscreen animations...
+	'browser.fullscreen.animateUp'               : 0              ,
 	'browser.link.open_newwindow'                : 1              , // Open links, that would normally open in a new window, in the current tab/window.
 	'browser.link.open_newwindow.restriction'    : 0              , // Divert all links according to browser.link.open_newwindow.
 	'browser.newtab.url'                         : 'about:blank'  , // Set new tab page to blank.
