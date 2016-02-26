@@ -376,6 +376,10 @@ commands.addUserCommand(
 	'devtools.selfxss.count'                     : 100            , // Disable paste warning in devtools...
 	'devtools.theme'                             : "dark"         , // Use dark theme for developer tools.
 	'dom.event.clipboardevents.enabled'          : false          , // Disable clipboard events.
+	'full-screen-api.transition-duration.enter'  : "0 0"          , // Disable fade-in on fullscreen transition.
+	'full-screen-api.transition-duration.leave'  : "0 0"          , // Disable fade-out on fullscreen transition.
+	'full-screen-api.warning.delay'              : 0              , // Disable delay on fullscreen transition notification.
+	'full-screen-api.warning.timeout'            : 1000           , // Reduce timeout on fullscreen transition notification.
 	'general.smoothScroll'                       : false          , // Disable smooth scrolling.
 	'general.warnOnAboutConfig'                  : false          , // Disable about:config warning.
 	'media.peerconnection.enabled'               : false          , // Disable WebRTC and PeerConnection.
