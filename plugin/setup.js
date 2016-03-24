@@ -254,12 +254,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // NoScript. {{{
-
-      installAddonIfNotAlready('NoScript', '{73a6fe31-595d-460b-a920-fcc0f8843232}');
-
-      // }}}
-
       // Self-Destructing Cookies. {{{
 
       installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
@@ -431,7 +425,6 @@ commands.addUserCommand(
 	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
 	    /* uMatrix                  */ 'umatrix-button',
 	    /* uBlock Origin            */ 'ublock0-button',
-	    /* NoScript                 */ 'noscript-tbb',
 	    /* HTTPS Everywhere         */ 'https-everywhere-button',
 	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
