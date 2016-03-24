@@ -25,6 +25,13 @@ set showstatuslinks=2
 
 " }}}
 
+" Plugins options. {{{
+
+" External editor to use for text field editing.
+set editor=gvim\ -f
+
+" }}}
+
 " Key mappings. {{{
 
 " Shortcut for "reader view" mode.
