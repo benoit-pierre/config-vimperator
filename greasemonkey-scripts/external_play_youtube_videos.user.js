@@ -384,22 +384,6 @@
     }
   }
 
-  // Circumvent Discourse link tracking...
-  if (typeof Discourse !== 'undefined') {
-    var trackClick = Discourse.ClickTrack.trackClick;
-    Discourse.ClickTrack.trackClick = function (e)
-    {
-      var s = e.currentTarget.getAttribute('href');
-      if (/^youtube:\/\//.test(s)) {
-        window.open(s).close();
-        e.stopPropagation();
-      e.preventDefault();
-      return false;
-      }
-      return true;
-    }
-  }
-
   fix_videos(document);
 
   // Monitor the document for dynamically added elements.
