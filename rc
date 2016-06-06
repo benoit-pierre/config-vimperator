@@ -6,7 +6,7 @@ colorscheme molokai
 " Completion.
 set wildmode=list:longest
 set noautocomplete
-set complete=slh
+set complete=st
 
 " Default search engine.
 set defsearch=ixquick
