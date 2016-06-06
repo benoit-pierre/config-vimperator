@@ -60,6 +60,9 @@ nnoremap <S-Space> <C-u>
 " Insert at the end of input fields.
 noremap gi gi<End>
 
+inoremap <S-Insert> <C-v>
+cnoremap <S-Insert> <C-v>
+
 " }}}
 
 " User styles. {{{
