@@ -10,15 +10,14 @@ commands.addUserCommand(
 
       if (extensions.length > 0) {
 	let list = template.tabular(
-	    ["Name", "ID"],
-	    ([template.icon(e, e.name), e.id]
-	     for ([, e] in Iterator(extensions)))
-	    );
+	  ["Name", "ID"],
+	  extensions.map(e => [template.icon(e, e.name), e.id])
+	);
 
 	commandline.echo(list, commandline.HL_NORMAL, commandline.FORCE_MULTILINE);
       }
       else {
-	  liberator.echoerr("No extensions installed");
+	liberator.echoerr("No extensions installed");
       }
     }
     catch (e) {
