@@ -1,6 +1,0 @@
-@namespace url(http://www.w3.org/1999/xhtml);
-
-@-moz-document domain("mail.google.com") {
-    .ii, .ii * { font-family: monospace !important; }
-    textarea { font-family: monospace !important; }
-}

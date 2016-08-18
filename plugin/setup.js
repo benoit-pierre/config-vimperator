@@ -142,19 +142,6 @@ commands.addUserCommand(
 	Services.search.addEngine(engine_uri, 1, null, true, callback);
       }
 
-      function installStylishStyle(name, uri) {
-	var style_file = File('~/.vimperator/stylish-styles/' + sanitizeName(name) + '.css');
-	log('Installing "' + name + '" Stylish style.');
-	if (null == uri) {
-	  uri = Services.io.newFileURI(style_file).spec;
-	}
-	var css = style_file.read();
-	var style = Components.classes["@userstyles.org/style;1"].createInstance(Components.interfaces.stylishStyle);
-	style.mode = style.CALCULATE_META | style.REGISTER_STYLE_ON_CHANGE;
-	style.init(uri, uri, uri, null, name, css, false, css, null, null);
-	stylishCommon.openInstall({style: style, installCallback: null});
-      }
-
       // }}}
 
       // Addons. {{{
@@ -282,47 +269,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Stylish. {{{
-
-      installAddonIfNotAlready('Stylish', '{46551EC9-40F0-4e47-8E18-8E5CF550CFB8}', function() {
-
-	setPrefs({
-	  'extensions.stylish.editorWindowMode': 1, // Open editor in a popup window.
-	});
-
-	installStylishStyle('Amazon Inverted'                          , null);
-	installStylishStyle('Arch Linux Inverted'                      , null);
-	installStylishStyle('Ars Technica Inverted'                    , null);
-	installStylishStyle('BBC Inverted'                             , null);
-	installStylishStyle('BoingBoing Inverted'                      , null);
-	installStylishStyle('Dark input fields: white on black'        , null);
-	installStylishStyle('Firefox: about:black'                     , 'https://userstyles.org/styles/42706/about-black');
-	installStylishStyle('Firefox: Minimal (customized)'            , 'https://userstyles.org/styles/111261/minimal-firefox');
-	installStylishStyle('Firefox: uBlock popup with no navbar fix' , null);
-	installStylishStyle('Gaming on Linux Inverted'                 , null);
-	installStylishStyle('GitHub Inverted'                          , null);
-	installStylishStyle('Gmail Inverted'                           , null);
-	installStylishStyle('Gmail: fixed font'                        , 'https://userstyles.org/styles/52863/fixed-font-gmail');
-	installStylishStyle('Gmail: larger fonts'                      , 'https://userstyles.org/styles/109438/gmail-larger-fonts');
-	installStylishStyle('Kickstarter Inverted'                     , null);
-	installStylishStyle('NewsBlur - Kemwer Black'                  , 'https://userstyles.org/styles/86275/newsblur-kemwer-black');
-	installStylishStyle('OsNews Inverted'                          , null);
-	installStylishStyle('Phoronix Inverted'                        , null);
-	installStylishStyle('Rock, Paper, Shotgun, Inverted'           , null);
-	installStylishStyle('Rock, Paper, Shotgun: centered'           , 'https://userstyles.org/styles/93689/rock-paper-centered');
-	installStylishStyle('Slashdot Inverted'                        , null);
-	installStylishStyle('SourceForge Inverted'                     , null);
-	installStylishStyle('Stack Overflow Inverted'                  , null);
-	installStylishStyle('Wikipedia Inverted'                       , null);
-	installStylishStyle('Youtube: Black by Panos'                  , 'https://userstyles.org/styles/62289/black-youtube-by-panos');
-	installStylishStyle('Youtube: Flashblock fix'                  , null);
-	installStylishStyle('Youtube: improved layout'                 , null);
-
-      });
-
-
-      // }}}
-
       // uBlock Origin. {{{
 
       installAddonIfNotAlready('uBlock Origin', 'uBlock0@raymondhill.net');
@@ -419,7 +365,6 @@ commands.addUserCommand(
 	  [
 	    /* FlashGot Media           */ 'flashgot-media-tbb',
 	    /* Download Status Bar      */ 'downloadbar-ddnbr',
-	    /* Stylish                  */ 'stylish-toolbar-button',
 	    /* Greasemonkey             */ 'greasemonkey-tbb',
 	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
 	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',

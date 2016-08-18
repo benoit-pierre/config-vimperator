@@ -1,8 +1,0 @@
-@namespace url(http://www.w3.org/1999/xhtml);
-
-@-moz-document domain('mail.google.com') {
-    * {font-size: inherit !important;}
-    body {
-        font-size: 1.2em !important;
-    }
-}
