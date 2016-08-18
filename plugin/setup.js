@@ -165,6 +165,10 @@ commands.addUserCommand(
 
       // }}}
 
+      // Dark Background and Light Text. {{{
+
+      installAddonIfNotAlready('Dark Background and Light Text', 'jid1-QoFqdK4qzUfGWQ@jetpack');
+
       // Download Status Bar. {{{
 
       installAddonIfNotAlready('Download Status Bar', '{6c28e999-ea90-4635-a39d-b1ec90ba0c0f}', function() {
@@ -363,15 +367,16 @@ commands.addUserCommand(
 	// Add addons to the add-on bar (at the end, from left to right). {{{
 	if ('toolbar' == CustomizableUI.getAreaType('ctraddon_addon-bar')) {
 	  [
-	    /* FlashGot Media           */ 'flashgot-media-tbb',
-	    /* Download Status Bar      */ 'downloadbar-ddnbr',
-	    /* Greasemonkey             */ 'greasemonkey-tbb',
-	    /* Flash Control            */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
-	    /* Self-Destructing Cookies */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
-	    /* uMatrix                  */ 'umatrix-button',
-	    /* uBlock Origin            */ 'ublock0-button',
-	    /* HTTPS Everywhere         */ 'https-everywhere-button',
-	    /* HackTheWeb               */ 'hacktheweb-toolbutton-all',
+	    /* FlashGot Media                 */ 'flashgot-media-tbb',
+	    /* Download Status Bar            */ 'downloadbar-ddnbr',
+	    /* Dark Background and Light Text */ 'toggle-button--jid1-qofqdk4qzufgwqjetpack-configure-for-current-tab-button',
+	    /* Greasemonkey                   */ 'greasemonkey-tbb',
+	    /* Flash Control                  */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
+	    /* Self-Destructing Cookies       */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
+	    /* uMatrix                        */ 'umatrix-button',
+	    /* uBlock Origin                  */ 'ublock0-button',
+	    /* HTTPS Everywhere               */ 'https-everywhere-button',
+	    /* HackTheWeb                     */ 'hacktheweb-toolbutton-all',
 	  ].forEach(function (b) {
 	    CustomizableUI.addWidgetToArea(b, 'ctraddon_addon-bar');
 	  });
