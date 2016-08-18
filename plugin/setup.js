@@ -239,6 +239,12 @@ commands.addUserCommand(
 
       // }}}
 
+      // Mouse Gestures Suite. {{{
+
+      installAddonIfNotAlready('Mouse Gestures Suite', 'mousegesturessuite@lemon_juice.addons.mozilla.org');
+
+      // }}}
+
       // Self-Destructing Cookies. {{{
 
       installAddonIfNotAlready('Self-Destructing Cookies', 'jid0-9XfBwUWnvPx4wWsfBWMCm4Jj69E@jetpack', function() {
