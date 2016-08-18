@@ -11,14 +11,14 @@ function editExternallyGetOptions() {
 	switch(host.replace(/^www\./, "")) {
 		case "github.com":
 			if (! path.match("/wiki/"))
-				return "ft=markdown spell";
+				return "ft=markdown spell wrap";
 			// TODO: handle /wiki
 		case "reddit.com":
 		case "stackoverflow.com":
 			return "ft=markdown spell";
 	}
 	if (host.match(/^mail\./))
-		return 'ft=mail spell';
+		return 'ft=mail spell wrap';
 	if (host.match(/.*\.wikia\.com$/) || host.match(/.*\.wikipedia\.org$/))
 		return "ft=mediawiki spell";
 	if (path.match(/\/phpmyadmin\//))
