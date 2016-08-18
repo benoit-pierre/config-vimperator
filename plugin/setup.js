@@ -182,12 +182,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // FireGestures. {{{
-
-      installAddonIfNotAlready('FireGestures', 'firegestures@xuldev.org');
-
-      // }}}
-
       // Flash Control. {{{
 
       installAddonIfNotAlready('Flash Control', 'jid1-sNL73VCI4UB0Fw@jetpack');
