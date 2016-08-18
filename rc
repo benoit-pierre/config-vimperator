@@ -72,6 +72,13 @@ style -name invert chrome://* #content { filter: invert(100%) hue-rotate(180deg)
 styledisable -name invert
 map v :styletoggle -name invert<CR>
 
+" Disable findbar (prevent if from poping when using 'n' does not match).
+style -name nofindbar chrome://* findbar { display: none; }
+
+style -name notextshadow * * { text-shadow: none !important; }
+
+style -name fixublockicon chrome://* #nav-bar * { visibility: visible; }
+
 " }}}
 
 " vim: ft=vim sw=2 foldmethod=marker foldlevel=0
