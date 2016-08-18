@@ -320,6 +320,7 @@ commands.addUserCommand(
 	'full-screen-api.warning.timeout'            : 1000           , // Reduce timeout on fullscreen transition notification.
 	'general.smoothScroll'                       : false          , // Disable smooth scrolling.
 	'general.warnOnAboutConfig'                  : false          , // Disable about:config warning.
+	'media.autoplay.enabled'                     : true           , // Disable auto-play of audio/video contents.
 	'media.peerconnection.enabled'               : false          , // Disable WebRTC and PeerConnection.
 	'media.volume_scale'                         : '0.125'        , // Change HTML5 default audio level from 'my ears will melt' to 50%...
 	'nglayout.enable_drag_images'                : false          , // Disable image on drag and drop.
