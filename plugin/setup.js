@@ -182,12 +182,6 @@ commands.addUserCommand(
 
       // }}}
 
-      // Flash Control. {{{
-
-      installAddonIfNotAlready('Flash Control', 'jid1-sNL73VCI4UB0Fw@jetpack');
-
-      // }}}
-
       // FlashGot. {{{
 
       installAddonIfNotAlready('FlashGot', '{19503e42-ca3c-4c27-b1e2-9cdb2170ee34}', function() {
@@ -371,7 +365,6 @@ commands.addUserCommand(
 	    /* Download Status Bar            */ 'downloadbar-ddnbr',
 	    /* Dark Background and Light Text */ 'toggle-button--jid1-qofqdk4qzufgwqjetpack-configure-for-current-tab-button',
 	    /* Greasemonkey                   */ 'greasemonkey-tbb',
-	    /* Flash Control                  */ 'toggle-button--jid1-snl73vci4ub0fwjetpack-flashctrlbtn',
 	    /* Self-Destructing Cookies       */ 'action-button--jid0-9xfbwuwnvpx4wwsfbwmcm4jj69ejetpack-self-destructing-cookies',
 	    /* uMatrix                        */ 'umatrix-button',
 	    /* uBlock Origin                  */ 'ublock0-button',
