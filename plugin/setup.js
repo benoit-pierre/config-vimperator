@@ -1,3 +1,4 @@
+var FileUtils = Cu.import("resource://gre/modules/FileUtils.jsm").FileUtils
 
 commands.addUserCommand(
 
@@ -32,7 +33,7 @@ commands.addUserCommand(
 
 	  log('Installing ' + name + ' addon.');
 
-	  var xpi = File('~/.vimperator/extensions/' + sanitizeName(name) + '.xpi');
+	  var xpi = new FileUtils.File('~/.vimperator/extensions/' + sanitizeName(name) + '.xpi');
 
 	  AddonManager.getInstallForFile(xpi, function (install) {
 	    install.install();
@@ -85,7 +86,7 @@ commands.addUserCommand(
 	Components.utils.import('resource://greasemonkey/remoteScript.js', scope);
 
 	var service = GM_util.getService();
-	var script_file = File('~/.vimperator/greasemonkey-scripts/' + sanitizeName(name) + '.user.js');
+	var script_file = new FileUtils.File('~/.vimperator/greasemonkey-scripts/' + sanitizeName(name) + '.user.js');
 	var script_uri = Services.io.newFileURI(script_file).spec;
 	var script_source = script_file.read();
 	var script = scope.parse(script_source, script_uri);
@@ -129,7 +130,7 @@ commands.addUserCommand(
 	  return;
 	}
 	log('Installing ' + name + ' search engine.');
-	var engine_file = File('~/.vimperator/search-engines/' + sanitizeName(name) + '.xml');
+	var engine_file = new FileUtils.File('~/.vimperator/search-engines/' + sanitizeName(name) + '.xml');
 	var engine_uri = Services.io.newFileURI(engine_file).spec;
 	var callback = {
 	  onSuccess: function (engine) {
