@@ -300,6 +300,7 @@ commands.addUserCommand(
 	'browser.link.open_newwindow'                : 1              , // Open links, that would normally open in a new window, in the current tab/window.
 	'browser.link.open_newwindow.restriction'    : 0              , // Divert all links according to browser.link.open_newwindow.
 	'browser.newtab.url'                         : 'about:blank'  , // Set new tab page to blank.
+	'browser.newtabpage.enabled'                 : false          , // Disable new tab page.
 	'browser.panorama.animate_zoom'              : false          , // Disable tab-groups animations...
 	'browser.safebrowsing.enabled'               : false          , // Do not report to Google...
 	'browser.safebrowsing.malware.enabled'       : false          ,
